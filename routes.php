@@ -1,5 +1,11 @@
 <?php
-$controllers = array('pages'=>['home','error'],'LaboratoryStaff'=>['index','search','newLaboratoryStaff','addLaboratoryStaff','delete','deleteConFirm','updateForm','update'],'Laboratory'=>['index','search','newLaboratory','addLaboratory','delete','deleteConform','updateForm','update'],'CheckRT_PCR'=>['index','search','newCheckRT_PCR','addCheckRT_PCR','delete','deleteConFirm','updateForm','update']);
+$controllers = array('pages'=>['home','error'],
+'LaboratoryStaff'=>['index','search','newLaboratoryStaff','addLaboratoryStaff','delete','deleteConFirm','updateForm','update'],
+'Laboratory'=>['index','search','newLaboratory','addLaboratory','delete','deleteConform','updateForm','update'],
+'CheckRT_PCR'=>['index','search','newCheckRT_PCR','addCheckRT_PCR','delete','deleteConFirm','updateForm','update'],
+'teacher'=>['index']
+
+);
 
 function call($controller,$action){
     require_once("./controllers/".$controller."_controller.php");
@@ -23,8 +29,13 @@ function call($controller,$action){
                                         require_once("./models/CheckRT_PCR.php");  
                                        
                                         $controller = new CheckRT_PCRController();
-                                        break;                             
-       
+                                        break;   //ไอ้ผึ้งมันก้อปมาไม่ลบ
+                                        
+                                        
+       //ของมายด์                         
+       case "teacher":                 require_once("./models/teacherModel.php"); 
+                                       $controller = new teacherController();
+                                       break;                 
     }
     $controller->{$action}();
 

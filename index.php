@@ -47,7 +47,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="?controller=teacher&action=index"></a>
                 
                             <i class='bx bx-envelope icon' ></i>
                             <span class="text nav-text">ยื่นคำร้อง</span>
