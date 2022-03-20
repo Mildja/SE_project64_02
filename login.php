@@ -54,7 +54,7 @@
             }
 
             if ($_SESSION['s_userlevel'] == 'm') {
-                header("Location: user_page.php");
+                header("Location: ./views/index.php");
             }
         } 
         else {
@@ -62,7 +62,7 @@
         }
 
     } else {
-        header("Location: index.php");
+        header("Location: user_index.php");
     }
 
 
