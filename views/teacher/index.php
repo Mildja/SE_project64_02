@@ -11,42 +11,31 @@
 
 
   <div class="container">
-    <div class="row ">
+    <div class="row align-items-start ">
       <div class='col-sm-16 m-auto'>
-        <div class="card text-center">
 
 
-          <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="true" href="#">ใบคำร้องทั้งหมด</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">ใบคำร้องที่รอการอนุมัติ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">ใบคำร้องที่อนุมัติแล้ว</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">ใบคำร้องที่ไม่อนุมัติ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-          </div>
 
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">ใบคำร้องทั้งหมด</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">ใบคำร้องที่รอการอนุมัติ</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">ใบคำร้องที่อนุมัติแล้ว</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
         </div>
+      
       </div>
-    
-    
     </div>
- </div>
+  </div>
 </body>
 
 <html>

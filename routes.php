@@ -1,6 +1,6 @@
 <?php
 $controllers = array('pages'=>['home','error'],
-'teacher'=>['index']
+'teacher'=>['index','page1']
 
 );
 
@@ -14,7 +14,7 @@ function call($controller,$action){
     
                                         
                           
-       case "teacher":                 // require_once("./models/teacherModel.php");                                   
+        case "teacher":                require_once("./models/teacherModel.php");                                   
                                        $controller = new teacherController();
                                        break;                 
     }
