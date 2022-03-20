@@ -9,7 +9,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $query = "SELECT * FROM Colabor WHERE C_email = '$username' AND password = '$password'";
+        $query = "SELECT * FROM Admin WHERE A_id = '$username' AND A_pass = '$password'";
          $query1 = "SELECT * FROM Student WHERE S_id = '$username' AND s_pass = '$password'";
 
         $result = mysqli_query($conn, $query);
@@ -19,21 +19,16 @@
 
             $row = mysqli_fetch_array($result);
 
-            $_SESSION['userid'] = $row['C_id'];
-            $_SESSION['user'] = $row['C_fname'] . " " . $row['C_lname'];
-            $_SESSION['userlevel'] = $row['userlevel'];
+            $_SESSION['userid'] = $row['A_id'];
+            $_SESSION['user'] = $row['A_fname'] . " " . $row['A_lname'];
+            $_SESSION['A_userlevel'] = $row['A_userlevel'];
 
            
 
 
 
-
-            if ($_SESSION['userlevel'] == 's') {
-                header("Location: admin_page.php");
-            }
-
-            if ($_SESSION['userlevel'] == 'm') {
-                header("Location: user_page.php");
+            if ($_SESSION['A_userlevel'] == 'a') {
+                header("Location: index_teacher.php");
             }
         } 
         if (mysqli_num_rows($result1) == 1) {
@@ -50,19 +45,16 @@
 
 
             if ($_SESSION['s_userlevel'] == 's') {
-                header("Location: admin_page.php");
+                header("Location: user_page.php");
             }
 
-            if ($_SESSION['s_userlevel'] == 'm') {
-                header("Location: ./views/index.php");
-            }
         } 
         else {
             echo "<script>alert('User หรือ Password ไม่ถูกต้อง);</script>";
         }
 
     } else {
-        header("Location: user_index.php");
+        header("Location: index.php");
     }
 
 
