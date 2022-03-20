@@ -31,27 +31,27 @@
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-          
+
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             ...
           </div>
-
-          <div class="tab-pane fade" id="page1" role="tabpanel" aria-labelledby="page1-tab">
-            ...
-          </div>
-
-          <div class="tab-pane fade" id="page2" role="tabpanel" aria-labelledby="page2-tab">
-            ...
-          </div>
-
-          <div class="tab-pane fade" id="page3" role="tabpanel" aria-labelledby="page3-tab">
-            ...
-          </div>
-
+        
+        <div class="tab-pane fade" id="page1" role="tabpanel" aria-labelledby="page1-tab">
+            หน้า1
         </div>
-      
+
+        <div class="tab-pane fade" id="page2" role="tabpanel" aria-labelledby="page2-tab">
+          หน้า2
+        </div>
+
+        <div class="tab-pane fade" id="page3" role="tabpanel" aria-labelledby="page3-tab">
+          หน้า3
+        </div>
+
       </div>
+
     </div>
+  </div>
   </div>
 </body>
 
