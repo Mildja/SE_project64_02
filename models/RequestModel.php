@@ -92,11 +92,9 @@ class teacher
 
     public static function getAll()
     {
-        echo"ออกไหม0";
+        
         $teacherList = [];
-        echo"ออกไหม1";
         require("connection_connect.php");
-        echo"ออกไหม1.1";
         $sql = "SELECT Request.R_id,Request.R_type,Request.R_position,Request.R_sdate
         ,Request.R_fdate,Request.R_cost,Request.R_room,Request.R_status,Request.S_id
         ,Request.C_id,Request.D_id,Student.S_pass,Student.S_fname,Student.S_lname,Student.S_year,
@@ -113,10 +111,28 @@ class teacher
                  LEFT JOIN Organization ON Data_namedoc.O_id=Organization.O_id && Colabor.O_id=Organization.O_id
                  LEFT JOIN AP_Request ON AP_Request.R_id=Request.R_id
                  LEFT JOIN Admin ON Admin.A_id=AP_Request.A_id
-                 LEFT JOIN Doc_Sent ON Doc_Sent.AP_id=AP_Request.AP_id";
-        echo"ออกไหม";
+                 LEFT JOIN Doc_Sent ON Doc_Sent.AP_id=AP_Request.AP_id
+        
+        UNION
+        
+        SELECT Request.R_id,Request.R_type,Request.R_position,Request.R_sdate
+        ,Request.R_fdate,Request.R_cost,Request.R_room,Request.R_status,Request.S_id
+        ,Request.C_id,Request.D_id,Student.S_pass,Student.S_fname,Student.S_lname,Student.S_year,
+        Colabor.C_fname,Colabor.C_lname,Colabor.C_email,Colabor.C_tel,Organization.O_id,Organization.O_name
+        ,Organization.O_addr,Data_namedoc.D_fname,Data_namedoc.D_lname,Data_namedoc.D_position
+        ,Doc_Request.DR_id,Doc_Request.DR_date,Doc_Request.DR_path,AP_Request.AP_id,AP_Request.AP_date
+        ,AP_Request.AP_approve,AP_Request.AP_note,Admin.A_id,Admin.A_pass,Admin.A_fname,Admin.A_lname
+        ,Admin.A_position,Doc_Sent.DS_id,Doc_Sent.DS_date,Doc_Sent.DS_path
+        
+        FROM Request INNER JOIN Doc_Request ON Request.R_id=Doc_Request.R_id 
+                 RIGHT JOIN Student ON Request.S_id=Student.S_id
+                 RIGHT JOIN Colabor ON Request.C_id=Colabor.C_id
+                 RIGHT JOIN Data_namedoc ON Request.D_id=Data_namedoc.D_id
+                 RIGHT JOIN Organization ON Data_namedoc.O_id=Organization.O_id && Colabor.O_id=Organization.O_id
+                 RIGHT JOIN AP_Request ON AP_Request.R_id=Request.R_id
+                 RIGHT JOIN Admin ON Admin.A_id=AP_Request.A_id
+                 RIGHT JOIN Doc_Sent ON Doc_Sent.AP_id=AP_Request.AP_id";
         $result = $conn->query($sql);
-        echo"ออกไหม3";
         while ($row = $result->fetch_assoc()) {
             $R_id = $row["R_id"];
             $R_type = $row["R_type"];
@@ -164,7 +180,6 @@ class teacher
             , $A_lname, $A_position, $DS_id, $DS_date, $DS_path);
         }
         require("connection_close.php");
-        echo"ออกไหม4";
         return $teacherList;
     }
 }
