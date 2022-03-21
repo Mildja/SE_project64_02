@@ -1,8 +1,8 @@
 <?php
 $controllers = array('pages'=>['home','error'],
 'teacher'=>['index','page1'],
-'studentRequest' =>['index'],
-'detailrequest'  =>['index'],
+'studentRequest' =>['index','detailRequest'],
+
 
 );
 
@@ -23,9 +23,7 @@ function call($controller,$action){
         case "studentRequest":         require_once("./models/studentModel.php");                                   
                                        $controller = new studentRequestController();
                                        break;  
-        case "detailrequest":         require_once("./models/studentDetailModel.php");                                   
-                                       $controller = new detailrequestController();
-                                       break; 
+      
     }
     $controller->{$action}();
 
