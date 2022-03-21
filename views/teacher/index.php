@@ -1,7 +1,7 @@
 <html>
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="teacher/styleteacher.css">
+  <meta charset="UTF-8">*
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
@@ -15,7 +15,7 @@
       <div class='col-sm-16 m-auto'>
 
 
-        <!--start แถบหัว ไม่ต้องยุ่ง-->
+        <!--start แถบหัว-->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">ใบคำร้องทั้งหมด</button>
@@ -44,7 +44,7 @@
                 <?php foreach($teacher_list as $teacher){?>
                   <div class="column">
                       <div class="box">
-                         
+                          <h1>dfdfdfdfd</h1>
                           <h2><?php echo "$teacher->O_name";?></h2>
                       </div>
                   </div>
