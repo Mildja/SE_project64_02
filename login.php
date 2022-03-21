@@ -5,10 +5,10 @@
     if (isset($_POST['username'])) {
 
         include('connect_connection.php');
-
+         
         $username = $_POST['username'];
         $password = $_POST['password'];
-
+        
         $query = "SELECT * FROM Admin WHERE A_id = '$username' AND A_pass = '$password'";
          $query1 = "SELECT * FROM Student WHERE S_id = '$username' AND s_pass = '$password'";
 
