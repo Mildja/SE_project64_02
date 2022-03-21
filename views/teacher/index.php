@@ -41,6 +41,7 @@
         <!--หน้า1-->
         <div class="tab-pane fade" id="page1" role="tabpanel" aria-labelledby="page1-tab">
                 <p5><?php echo "รอการอนุมัติ";?></p5>
+                 <!--วนลูปแสดงข้อมูล-->
                 <?php foreach($teacher_list as $teacher){?>
                   <div class="column">
                       <div class="box">
@@ -51,12 +52,13 @@
                <?php }?>
         </div>
 
-        <!--หน้า2-->
+        <!--หน้า2ของเตย-->
         <div class="tab-pane fade" id="page2" role="tabpanel" aria-labelledby="page2-tab">
+          
           หน้า2
         </div>
 
-        <!--หน้า3-->
+        <!--หน้า3ของปอ-->
         <div class="tab-pane fade" id="page3" role="tabpanel" aria-labelledby="page3-tab">
           หน้า3
         </div>
