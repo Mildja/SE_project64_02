@@ -15,7 +15,7 @@
       <div class='col-sm-16 m-auto'>
 
 
-        <!--start แถบหัว-->
+        <!--start แถบหัว ไม่ต้องยุ่ง-->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">ใบคำร้องทั้งหมด</button>
@@ -44,8 +44,8 @@
                 <?php foreach($teacher_list as $teacher){?>
                   <div class="column">
                       <div class="box">
-                          <h1>dfdfdfdfd</h1>
-                          <h2><?php echo "$teacer->O_name";?></h2>
+                         
+                          <h2><?php echo "$teacher->O_name";?></h2>
                       </div>
                   </div>
                <?php }?>

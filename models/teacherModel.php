@@ -92,11 +92,9 @@ class teacher
 
     public static function getAll()
     {
-        echo"ออกไหม0";
+        
         $teacherList = [];
-        echo"ออกไหม1";
-        require("connection_connect.php");
-        echo"ออกไหม1.1";
+        require("connect_connection.php");
         $sql = "SELECT Request.R_id,Request.R_type,Request.R_position,Request.R_sdate
         ,Request.R_fdate,Request.R_cost,Request.R_room,Request.R_status,Request.S_id
         ,Request.C_id,Request.D_id,Student.S_pass,Student.S_fname,Student.S_lname,Student.S_year,
@@ -114,9 +112,7 @@ class teacher
                  LEFT JOIN AP_Request ON AP_Request.R_id=Request.R_id
                  LEFT JOIN Admin ON Admin.A_id=AP_Request.A_id
                  LEFT JOIN Doc_Sent ON Doc_Sent.AP_id=AP_Request.AP_id";
-        echo"ออกไหม";
         $result = $conn->query($sql);
-        echo"ออกไหม3";
         while ($row = $result->fetch_assoc()) {
             $R_id = $row["R_id"];
             $R_type = $row["R_type"];
@@ -164,7 +160,6 @@ class teacher
             , $A_lname, $A_position, $DS_id, $DS_date, $DS_path);
         }
         require("connection_close.php");
-        echo"ออกไหม4";
         return $teacherList;
     }
 }
