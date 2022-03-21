@@ -1,53 +1,60 @@
-<?php 
+<?php
 
-$userid=$_SESSION['userid'];
+$userid = $_SESSION['userid'];
 
 
-    session_start();
+session_start();
 
-    if (!$_SESSION['userid']) {
-        header("Location: index.php");
-    } else {
+if (!$_SESSION['userid']) {
+    header("Location: index.php");
+} else {
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="views/studentRequest/styleteastudent.css">
-</head>
-<body bgcolor = "#f0fff0"><center>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <link rel="stylesheet" href="views/studentRequest/styleteastudent.css">
+    </head>
+
+    <body bgcolor="#f0fff0">
+        <center>
 
 
 
 
 
 
-<!-- <form method="get" action="" style=" right:200px;">
+            <!-- <form method="get" action="" style=" right:200px;">
         <input type="text" name="key" size = "30">
         <input type="hidden" name="controller" value="order"  />
         <button type="submit" name="action" value="search"> Search </button>
         <button type="submit" name="action" value="index">Back</button></br>
     </form> -->
-    <?php echo $userid ?>
-  
-    <?php foreach($studentRequestList as $studentRequest){?>
-               
-                     <div class="column">
-                         <div class="box">
-                         
-                              <h2><?php echo "$studentRequest->O_name";?></h2>
-                              <p5><?php echo "$studentRequest->R_type";?></p5>
-                              
-                          </div>
+            <?php echo $userid ?>
 
+            <?php foreach ($studentRequestList as $studentRequest) { ?>
+                <?php if ($studentRequest->S_id ==  $userid && $studentRequest->AP_date !=  NULL ) { ?>
+                    <div class="column">
+                        <div class="box">
+
+                            <h2><?php echo "$studentRequest->O_name"; ?></h2>
+                            <p5><?php echo "$studentRequest->R_type"; ?></p5><br/>
+                            <p5><?php echo "$studentRequest->AP_date"; ?></p5><br/>
+                            <p5><?php echo "$studentRequest->R_status"; ?></p5><br/><br/>
+                            <button type="button" href="?controller=studentRequest&action=detailRequest" class="btn btn-success">รายละเอียด</button>
+                           
+                        </div>
+                        <!-- ?controller=studentRequest&action=detailRequest -->
 
 
                     </div>
-               
 
-      <?php }?>
-    <!-- <br><tr>
+                <?php } ?>
+
+            <?php } ?>
+            <!-- <br><tr>
         <th>ชื่อบริษัท</th>
         <th>รูปแบบ</th>
  
@@ -55,15 +62,16 @@ $userid=$_SESSION['userid'];
 
 ?>
 <br> -->
-</center>
+        </center>
 
-<!-- <center><a class="button" href="?controller=order&action=newOrder">Addnew</a></center> -->
+        <!-- <center><a class="button" href="?controller=order&action=newOrder">Addnew</a></center> -->
 
 
 
-</body>
-<br>
-<br>
-<!-- <center><font size = "4" color = "black">BY น.ส.น้ำผึ้ง กิติกังสดาร 6220502159 </font></center> -->
-</html>
+    </body>
+    <br>
+    <br>
+    <!-- <center><font size = "4" color = "black">BY น.ส.น้ำผึ้ง กิติกังสดาร 6220502159 </font></center> -->
+
+    </html>
 <?php } ?>
