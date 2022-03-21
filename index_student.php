@@ -13,6 +13,15 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 }
 
 
+    session_start();
+
+    if (!$_SESSION['userid']) {
+        header("Location: index.php");
+    } else {
+
+
+
+
 
 ?>
 
@@ -35,14 +44,14 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-user-secret me-2"></i>Codersbite</div>
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><img
+                    src ="./img/logo.php me-2"></img> <?php echo $_SESSION['user']; ?><?php echo $_SESSION['userid']; ?></div>
             <div class="list-group list-group-flush my-3">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
 
                 <a href="?controller=studentRequest&action=index" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-project-diagram me-2"></i>student</a>
+                        class="fas fa-project-diagram me-2"></i>คำร้องฝึกงาน</a>
 
 
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
@@ -79,7 +88,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Dashboard</h2>
+                    <h2 class="fs-2 m-0">INTERNSHIP SYSTEM</h2>
                   
                 </div>
 
@@ -126,3 +135,4 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 
 </html>
 
+<?php } ?>
