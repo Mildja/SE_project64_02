@@ -43,12 +43,16 @@
                 <p5><?php echo "รอการอนุมัติ";?></p5>
                  <!--วนลูปแสดงข้อมูล-->
                 <?php foreach($teacher_list as $teacher){?>
-                  <div class="column">
-                      <div class="box">
-                          <h1>dfdfdfdfd</h1>
-                          <h2><?php echo "$teacher->O_name";?></h2>
-                      </div>
-                  </div>
+                   <?php if($teacher->R_status=="รอดำเนินการ"){?>
+                     <div class="column">
+                         <div class="box">
+                         
+                              <h2><?php echo "$teacher->O_name";?></h2>
+                              <p5><?php echo "$teacher->R_status";?></p5>
+                              
+                          </div>
+                    </div>
+                  <?php }?>
                <?php }?>
         </div>
 
