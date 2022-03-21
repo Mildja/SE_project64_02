@@ -45,7 +45,7 @@
 
 
             if ($_SESSION['s_userlevel'] == 's') {
-                header("Location: user_page.php");
+                header("Location: index_student.php");
             }
 
         } 
