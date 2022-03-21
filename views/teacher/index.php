@@ -53,9 +53,8 @@
                     <p5><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
                     <p5><?php echo "$teacher->R_status"; ?></p5><br>
                     <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">อนุมัติ</a>
-                    <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button">ไม่อนุมัติ</a>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Launch demo modal
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      ไม่อนุมัติ
                     </button>
 
                     <!-- Modal -->
@@ -77,12 +76,10 @@
                       </div>
                     </div>
                     <br><br>
+                  
+                  
                   </div>
                 </div>
-
-
-
-
               <?php } ?>
             <?php } ?>
           </div>
