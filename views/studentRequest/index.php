@@ -1,3 +1,16 @@
+<?php 
+
+$userid=$_SESSION['userid'];
+
+
+    session_start();
+
+    if (!$_SESSION['userid']) {
+        header("Location: index.php");
+    } else {
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,10 +29,10 @@
         <button type="submit" name="action" value="search"> Search </button>
         <button type="submit" name="action" value="index">Back</button></br>
     </form> -->
-    
-
+    <?php echo $userid ?>
+  
     <?php foreach($studentRequestList as $studentRequest){?>
-                  
+               
                      <div class="column">
                          <div class="box">
                          
@@ -27,10 +40,13 @@
                               <p5><?php echo "$studentRequest->R_type";?></p5>
                               
                           </div>
+
+
+
                     </div>
-                
-               <?php }?>
-    
+               
+
+      <?php }?>
     <!-- <br><tr>
         <th>ชื่อบริษัท</th>
         <th>รูปแบบ</th>
@@ -50,3 +66,4 @@
 <br>
 <!-- <center><font size = "4" color = "black">BY น.ส.น้ำผึ้ง กิติกังสดาร 6220502159 </font></center> -->
 </html>
+<?php } ?>
