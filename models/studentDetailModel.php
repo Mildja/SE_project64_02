@@ -63,23 +63,23 @@ class detailrequest
 
         while ($my_row = $result->fetch_assoc()) {
 
-            $R_type= $my_row[R_type];
-            $S_fname = $my_row[S_fname];
-            $S_lname= $my_row[S_lname];
-            $R_position = $my_row[R_position];
-            $R_sdate= $my_row[R_sdate];
-            $R_fdate = $my_row[R_fdate];
-            $O_name= $my_row[O_name];
-            $O_addr = $my_row[O_addr];
-            $C_fname= $my_row[C_fname];
-            $C_lname = $my_row[C_lname];
-            $C_email= $my_row[C_email];
-            $C_tel = $my_row[C_tel];
-            $D_fname= $my_row[D_fname];
-            $D_lname = $my_row[D_lname];
-            $D_position = $my_row[D_position];
-            $R_status = $my_row[R_status];
-            $DR_path = $my_row[DR_path];
+            $R_type= $my_row["R_type"];
+            $S_fname = $my_row["S_fname"];
+            $S_lname= $my_row["S_lname"];
+            $R_position = $my_row["R_position"];
+            $R_sdate= $my_row["R_sdate"];
+            $R_fdate = $my_row["R_fdate"];
+            $O_name= $my_row["O_name"];
+            $O_addr = $my_row["O_addr"];
+            $C_fname= $my_row["C_fname"];
+            $C_lname = $my_row["C_lname"];
+            $C_email= $my_row["C_email"];
+            $C_tel = $my_row["C_tel"];
+            $D_fname= $my_row["D_fname"];
+            $D_lname = $my_row["D_lname"];
+            $D_position = $my_row["D_position"];
+            $R_status = $my_row["R_status"];
+            $DR_path = $my_row["DR_path"];
            
 
             $detailrequestList[] = new detailrequest($R_type,$S_fname,$S_lname,$R_position,$R_sdate,$R_fdate,$O_name,$O_addr,$C_fname,$C_lname,$C_email,$C_tel,$D_fname,$D_lname,$D_position,$R_status,$DR_path);
