@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <meta charset="UTF-8">*
   <link rel="stylesheet" href="views/teacher/styleteacher.css">
@@ -38,41 +39,69 @@
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             ...
           </div>
-        <!--หน้า1-->
-        <div class="tab-pane fade" id="page1" role="tabpanel" aria-labelledby="page1-tab">
-                <p5><?php echo "รอการอนุมัติ";?></p5>
-                 <!--วนลูปแสดงข้อมูล-->
-                <?php foreach($teacher_list as $teacher){?>
-                   <?php if($teacher->R_status=="รอดำเนินการ"&&$teacher->DS_id =="ยังไม่ได้อัพเอกสารขอความอนุเคราะห์"){?>
-                     <div class="column">
-                         <div class="box">
+          <!--หน้า1-->
+          <div class="tab-pane fade" id="page1" role="tabpanel" aria-labelledby="page1-tab">
+            <p5><?php echo "รอการอนุมัติ"; ?></p5>
+            <!--วนลูปแสดงข้อมูล-->
+            <?php foreach ($teacher_list as $teacher) { ?>
+              <?php if ($teacher->R_status == "รอดำเนินการ" && $teacher->DS_id == "ยังไม่ได้อัพเอกสารขอความอนุเคราะห์") { ?>
+                <div class="column">
+                  <div class="box">
 
-                              <h2><?php echo "$teacher->O_name";?></h2>
-                              <p5><?php echo "$teacher->R_type $teacher->DR_date";?></p5><br>
-                              <p5><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id";?></p5><br>
-                              <p5><?php echo "$teacher->R_status";?></p5><br>
-                            
+                    <h2><?php echo "$teacher->O_name"; ?></h2>
+                    <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
+                    <p5><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
+                    <p5><?php echo "$teacher->R_status"; ?></p5><br>
+                    <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">อนุมัติ</a>
+                    <a href="#" class="btn btn-danger" role="button" data-bs-toggle="button">ไม่อนุมัติ</a>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Launch demo modal
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
+                          <div class="modal-body">
+                            ...
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  <?php }?>
-               <?php }?>
-        </div>
+                    <br><br>
+                  </div>
+                </div>
 
-        <!--หน้า2ของเตย-->
-        <div class="tab-pane fade" id="page2" role="tabpanel" aria-labelledby="page2-tab">
-          
-          หน้า2
-        </div>
 
-        <!--หน้า3ของปอ-->
-        <div class="tab-pane fade" id="page3" role="tabpanel" aria-labelledby="page3-tab">
-          หน้า3
+
+
+              <?php } ?>
+            <?php } ?>
+          </div>
+
+          <!--หน้า2ของเตย-->
+          <div class="tab-pane fade" id="page2" role="tabpanel" aria-labelledby="page2-tab">
+
+            หน้า2
+          </div>
+
+          <!--หน้า3ของปอ-->
+          <div class="tab-pane fade" id="page3" role="tabpanel" aria-labelledby="page3-tab">
+            หน้า3
+          </div>
         </div>
+        <!--จบ-->
+
       </div>
-      <!--จบ-->
-
     </div>
-  </div>
   </div>
 </body>
 <html>
