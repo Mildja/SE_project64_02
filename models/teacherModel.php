@@ -100,19 +100,9 @@ class teacher
         ,Request.C_id,Request.D_id,Student.S_pass,Student.S_fname,Student.S_lname,Student.S_year,
         Colabor.C_fname,Colabor.C_lname,Colabor.C_email,Colabor.C_tel,Organization.O_id,Organization.O_name
         ,Organization.O_addr,Data_namedoc.D_fname,Data_namedoc.D_lname,Data_namedoc.D_position
-        ,IF(Doc_Request.DR_id is NULL,'ไม่มีเอกสารคำร้องขอ',Doc_Request.DR_id) AS DR_id
-        ,IF(Doc_Request.DR_date is NULL,'ไม่มีเอกสารคำร้องขอ',Doc_Request.DR_date) AS DR_date
-        ,IF(Doc_Request.DR_path is NULL,'ไม่มีเอกสารคำร้องขอ',Doc_Request.DR_path) AS DR_path
-        ,IF(AP_Request.AP_id is NULL,'รอดำเนินการ',AP_Request.AP_id) AS AP_id
-        ,IF(AP_Request.AP_date is NULL,'รอดำเนินการ',AP_Request.AP_date) AS AP_date
-        ,IF(AP_Request.AP_approve is NULL,'รอดำเนินการ',AP_Request.AP_approve) AS AP_approve
-        ,IF(AP_Request.AP_note is NULL,'ไม่มีบันทึก',AP_Request.AP_note) AS AP_note
-        ,Admin.A_id,Admin.A_pass,Admin.A_fname,Admin.A_lname
-        ,Admin.A_position
-        ,IF(Doc_Sent.DS_id is NULL,'ยังไม่ได้อัพเอกสารขอความอนุเคราะห์',Doc_Sent.DS_id) AS DS_id
-        ,IF(Doc_Sent.DS_date is NULL,'ยังไม่ได้อัพเอกสารขอความอนุเคราะห์',Doc_Sent.DS_date) AS DS_date
-        ,IF(Doc_Sent.DS_path is NULL,'ยังไม่ได้อัพเอกสารขอความอนุเคราะห์',Doc_Sent.DS_path) AS DS_path
-       
+        ,Doc_Request.DR_id,Doc_Request.DR_date,Doc_Request.DR_path,AP_Request.AP_id,AP_Request.AP_date
+        ,AP_Request.AP_approve,AP_Request.AP_note,Admin.A_id,Admin.A_pass,Admin.A_fname,Admin.A_lname
+        ,Admin.A_position,Doc_Sent.DS_id,Doc_Sent.DS_date,Doc_Sent.DS_path
         
         FROM Request LEFT JOIN Doc_Request ON Request.R_id=Doc_Request.R_id 
                  LEFT JOIN Student ON Request.S_id=Student.S_id
