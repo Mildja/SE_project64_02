@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">*
   <link rel="stylesheet" href="views/teacher/styleteacher.css">
- 
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
@@ -62,12 +62,18 @@
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">เหตุผลที่ไม่อนุมัติ</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
+
                           <div class="modal-body">
-                            ...
+                            <!-- ช่องกรอกข้อความ byมายด์ -->
+                            <div class="mb-3">
+                              <label for="exampleFormControlTextarea1" class="form-label">เหตุผลที่ไม่อนุมัติ</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3"></textarea>
+                            </div>
                           </div>
+
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary">Save changes</button>
@@ -76,8 +82,8 @@
                       </div>
                     </div>
                     <br><br>
-                  
-                  
+
+
                   </div>
                 </div>
               <?php } ?>
