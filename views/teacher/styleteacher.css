@@ -1,5 +1,5 @@
 .box{
-    background-color: aliceblue;
+    background-color: rgb(246, 251, 255);
     padding: 30px;
     margin: 10px;
     height: 200px;
@@ -7,6 +7,6 @@
     text-align: start;
 }
 .box:hover{
-    background: #b0b0ff;
+    background: #73887d;
     color: #fff;
 }
