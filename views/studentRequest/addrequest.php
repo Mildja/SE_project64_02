@@ -18,6 +18,10 @@
                     <div class="column">
                         <div class="box2">
 
+                            <label><p5>วันที่ส่งเอกสารไฟล์คำร้อง &nbsp;<input type="date" name="date"
+                                    value ="<?php echo "$studentRequest->AP_date"; ?>"/></p5></label><br/><br/>
+
+
                             <select class="form-select" aria-label="Default select example">
                             <option selected>เลือก</option>
                             <option value="1">ฝึกงาน</option>
@@ -66,7 +70,7 @@
                             
                                     
                             
-                            <p3><label>ข้อมูลสถานประกอบการ</label></p3>
+                            <label>ข้อมูลสถานประกอบการ</label>
                             <div class="col-12">
                                 <label for="O_name" class="form-label" ></label>
                                 <input type="text" class="form-control" name ="O_name"placeholder="ชื่อสถานประกอบการ" aria-label="ชื่อสถานประกอบการ" >
@@ -80,7 +84,7 @@
                                 <p5><?php echo "$studentRequest->O_addr"; ?></p5><br/>
                             </div>
 
-                            <p3><label>ข้อมูลผู้ประสานงาน</label></p3>
+                            <label>ข้อมูลผู้ประสานงาน</label>
                             <br/>
                             <div class="row">
                             <div class="col">
@@ -108,7 +112,7 @@
                             </div>
 
                             
-                            <p3><label>ข้อมูลสถานการออกหนังสืออนุเคราะห์</label></p3>
+                            <label>ข้อมูลสถานการออกหนังสืออนุเคราะห์</label>
                             <br/>
                             <div class="row">
                             <div class="col">
