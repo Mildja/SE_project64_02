@@ -26,10 +26,9 @@ if (!$_SESSION['userid']) {
 
             <?php echo $userid ?>
 
-            <?php foreach ($studentRequestList as $studentRequest) { ?>
-                <?php if ($studentRequest->S_id ==  $userid  ) { ?>
+      
                     <div class="column">
-                        <div class="box">
+                        <div class="box2">
 
                             <select class="form-select" aria-label="Default select example">
                             <option selected>เลือก</option>
@@ -155,9 +154,8 @@ if (!$_SESSION['userid']) {
 
                     </div>
 
-                <?php } ?>
 
-            <?php } ?>
+      
         
         </center>
 
