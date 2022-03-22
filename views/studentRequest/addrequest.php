@@ -135,13 +135,15 @@
                             </div>
 
                             <br/><br/>
-                            <button type="button" href="#" class="btn btn-success">ย้อนกลับ</button>
-
-                            <button type="button" href="#" class="btn btn-success">บันทึก</button>
+                            <input type="hidden" name="controller" value="studentRequest"/><br>
+                            <a type="button" href="?controller=studentRequest&action=index" class="btn btn-success">ย้อนกลับ</a>
+                            
+                            <button type="submit" name="action" value="addRequest">Save</button>
+                            
                            
                         </div>
                         
-
+                       
 
                     </div>
 
