@@ -66,16 +66,16 @@ session_start();
                     <p5><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
                     <p5><?php echo "$teacher->R_status"; ?></p5><br>
                     <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">อนุมัติ</a>
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addModal">
                       ไม่อนุมัติ
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title text-dark" id="exampleModalLabel">เหตุผลที่ไม่อนุมัติ</h5>
+                            <h5 class="modal-title text-dark" id="addModalLabel">เหตุผลที่ไม่อนุมัติ</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
 
@@ -83,7 +83,7 @@ session_start();
                             <!-- ช่องกรอกข้อความ byมายด์ -->
                             <div class="mb-3 text-dark">
                               <label for="exampleFormControlTextarea1" class="form-label">เหตุผลที่ไม่อนุมัติ</label>
-                              <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3"></textarea>
+                              <textarea class="form-control " id='AP_note' aria-label=".form-control-sm example" rows="3"></textarea>
                             </div>
                           </div>
 
