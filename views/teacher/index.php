@@ -57,20 +57,22 @@ session_start();
             <p5><?php echo "รอการอนุมัติ"; ?></p5>
             <!--วนลูปแสดงข้อมูล-->
             <?php foreach ($teacher_list as $teacher) { ?>
+              <!--เงื่อนไขใครเงื่อนไขมันเลยตามหัวข้อ-->
               <?php if ($teacher->R_status == "รอดำเนินการ" && $teacher->DS_id == "ยังไม่ได้อัพเอกสารขอความอนุเคราะห์") { ?>
                 <div class="column">
                   <div class="box">
 
                     <h2><?php echo "$teacher->O_name"; ?></h2>
                     <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
-                    <p5><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
+                    <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
                     <p5><?php echo "$teacher->R_status"; ?></p5><br>
+
                     <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">อนุมัติ</a>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addModal">
                       ไม่อนุมัติ
                     </button>
 
-                    <!-- Modal -->
+                    <!-- Modal คือการคลิกให้เด้ง pop up ขึ้นมานะเพื่อน-->
                     <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
