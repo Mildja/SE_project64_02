@@ -45,7 +45,7 @@
                             <p5><?php echo "สถานะ $studentRequest->R_status"; ?></p5><br/><br/><br/>
                             <p5><?php echo "$studentRequest->DR_path"; ?></p5><br/><br/><br/>
                             
-                            <button type="button" href="#" class="btn btn-success">ย้อนกลับ</button>
+                            <a type="button" href="?controller=studentRequest&action=index" class="btn btn-success">ย้อนกลับ</a>
                            
                         </div>
                         
