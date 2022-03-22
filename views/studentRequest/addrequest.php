@@ -70,7 +70,7 @@
 
 
                             <div class="col-12">
-                                <label for="O_name" class="form-label">ชื่อสถานประกอบการ</label>
+                                <label for="O_name" class="form-label" placeholder="ชื่อสถานประกอบการ" aria-label="ชื่อสถานประกอบการ"></label>
                                 <input type="text" class="form-control" name ="O_name" >
                                 <p5><?php echo "$studentRequest->O_name"; ?></p5><br/>
                             </div>
