@@ -25,7 +25,7 @@
                             <p5><?php echo "$studentRequest->R_type"; ?></p5><br/><br/>
                             </select>
 
-
+                            <br/>
                             <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ">
@@ -33,60 +33,64 @@
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="นามสกุล" aria-label="นามสกุล">
-                                <p5><?php echo " $studentRequest->S_lname"; ?></p5><br/><br/>
+                                <p5><?php echo " $studentRequest->S_lname"; ?></p5><br/>
                             </div>
                             </div>
 
                             <div class="col-12">
                                 <label for="R_position" class="form-label">ตำแหน่ง</label>
                                 <input type="text" class="form-control" name ="R_position" >
-                                <p5><?php echo "$studentRequest->R_position"; ?></p5><br/><br/>
+                                <p5><?php echo "$studentRequest->R_position"; ?></p5><br/>
                             </div>
                            
 
                             <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" > <label>ค่าตอบแทน</label>
+                            <label>ค่าตอบแทน</label>
+                                <input type="text" class="form-control" > 
                                 <p5><?php echo " $studentRequest->R_cost"; ?></p5><br/>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" ><label>ที่พัก</label>
-                                <p5><?php echo " $studentRequest->R_room"; ?></p5><br/><br/>
+                            <label>ที่พัก</label>
+                                <input type="text" class="form-control" >
+                                <p5><?php echo " $studentRequest->R_room"; ?></p5><br/>
                             </div>
                             </div>
 
                             
-                            <label><p5>วันเริ่มฝึกงาน <input type="date" name="date"
+                            <label><p5>วันเริ่มฝึกงาน &nbsp;<input type="date" name="date"
                                     value ="<?php echo "$studentRequest->R_sdate"; ?>"/></p5></label><br/><br/>
                             
-                            <label><p5>วันสิ้นสุดฝึกงาน <input type="date" name="date"
+                            <label><p5>วันสิ้นสุดฝึกงาน &nbsp;<input type="date" name="date"
                                     value ="<?php echo "$studentRequest->R_fdate"; ?>"/></p5></label><br/><br/>
                             
                                     
                             
-                            <p5><label>ข้อสถานประกอบการ</label></p5><br/>
+                            <p3><label>ข้อมูลสถานประกอบการ</label></p3><br/>
+                            <br/>
                             <div class="col-12">
-                                <label for="O_name" class="form-label">ชื่อสถานประกอบการ</label>
-                                <input type="text" class="form-control" name ="O_name" >
-                                <p5><?php echo "$studentRequest->O_name"; ?></p5><br/><br/>
+                                <label for="O_name" class="form-label" ></label>
+                                <input type="text" class="form-control" name ="O_name"placeholder="ชื่อสถานประกอบการ" aria-label="ชื่อสถานประกอบการ" >
+                                <p5><?php echo "$studentRequest->O_name"; ?></p5><br/>
                             </div>
 
 
                             <div class="col-12">
                                 <label for="O_addr" class="form-label">ที่อยู่</label>
                                 <input type="text" class="form-control" name ="O_addr" >
-                                <p5><?php echo "$studentRequest->O_addr"; ?></p5><br/><br/>
+                                <p5><?php echo "$studentRequest->O_addr"; ?></p5><br/>
                             </div>
 
-                            <label>ข้อมูลผู้ประสานงาน</label>
+                            <p3><label>ข้อมูลผู้ประสานงาน</label></p3><br/>
+                            <br/>
                             <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ">
-                                <p5>ชื่อ<?php echo " $studentRequest->C_fname"; ?></p5>
+                                <p5><?php echo " $studentRequest->C_fname"; ?></p5>
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="นามสกุล" aria-label="นามสกุล">
-                                <p5>นามสกุล<?php echo " $studentRequest->C_lname"; ?></p5><br/><br/>
+                                <p5><?php echo " $studentRequest->C_lname"; ?></p5><br/>
                             </div>
                             </div>
 
@@ -105,16 +109,16 @@
                             </div>
 
                             
-                            <label>ข้อมูลสถานการออกหนังสืออนุเคราะห์</label>
-
+                            <p3><label>ข้อมูลสถานการออกหนังสืออนุเคราะห์</label></p3>
+                            <br/>
                             <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ">
-                                <p5>ชื่อ<?php echo " $studentRequest->D_fname"; ?></p5>
+                                <p5><?php echo " $studentRequest->D_fname"; ?></p5>
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="นามสกุล" aria-label="นามสกุล">
-                                <p5>นามสกุล<?php echo " $studentRequest->D_lname"; ?></p5><br/><br/>
+                                <p5><?php echo " $studentRequest->D_lname"; ?></p5><br/>
                             </div>
                             </div>
 
@@ -131,7 +135,7 @@
                                 <input class="form-control" type="file" id="formFile">
                             </div>
 
-                            
+                            <br/><br/>
                             <button type="button" href="#" class="btn btn-success">ย้อนกลับ</button>
 
                             <button type="button" href="#" class="btn btn-success">บันทึก</button>
