@@ -66,9 +66,8 @@
                             
                                     
                             
-                            <p3><label>ข้อสถานประกอบการ</label></p3><br/>
-
-
+                            <p3><label>ข้อมูลสถานประกอบการ</label></p3><br/>
+                            <br/>
                             <div class="col-12">
                                 <label for="O_name" class="form-label" ></label>
                                 <input type="text" class="form-control" name ="O_name"placeholder="ชื่อสถานประกอบการ" aria-label="ชื่อสถานประกอบการ" >
@@ -83,8 +82,7 @@
                             </div>
 
                             <p3><label>ข้อมูลผู้ประสานงาน</label></p3><br/>
-
-
+                            <br/>
                             <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ">
@@ -112,8 +110,7 @@
 
                             
                             <p3><label>ข้อมูลสถานการออกหนังสืออนุเคราะห์</label></p3>
-
-
+                            <br/>
                             <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ">
