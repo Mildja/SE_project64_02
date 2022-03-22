@@ -16,7 +16,7 @@
             <?php echo $userid ?>
 
                     <div class="column">
-                        <div class="box">
+                        <div class="box2">
 
                             <select class="form-select" aria-label="Default select example">
                             <option selected>เลือก</option>
