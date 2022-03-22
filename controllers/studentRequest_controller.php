@@ -16,8 +16,17 @@
        echo $id;
        $studentRequest  = studentRequest::get($id);
        echo $studentRequest->R_id;
-      //$studentRequestList=studentRequest::getAll();
+      
        require_once('./views/studentRequest/detailRequest.php');
        
    }
+
+   public function newRequest()
+   {
+       
+       require_once('./views/studentRequest/addrequest.php');
+       
+   }
+
+
 }?>
