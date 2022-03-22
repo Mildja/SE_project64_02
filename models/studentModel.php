@@ -4,14 +4,16 @@ class studentRequest
 
 {
 
-    public $S_id,
+    public $S_id, $R_id,
         $O_id, $O_name, $AP_date, $R_status, $R_type, $S_fname, $S_lname,
         $R_position, $R_sdate, $R_fdate, $O_addr, $C_fname, $C_lname, $C_email, $C_tel,
         $D_fname, $D_lname, $D_position, $DR_path;
 
 
     public function __construct(
+        
         $S_id,
+        $R_id,
         $O_id,
         $O_name,
         $AP_date,
@@ -32,7 +34,10 @@ class studentRequest
         $D_position,
         $DR_path
     ) {
+
+
         $this->S_id = $S_id;
+        $this->R_id = $R_id;
         $this->O_id = $O_id;
         $this->O_name = $O_name;
         $this->AP_date = $AP_date;
@@ -64,8 +69,8 @@ class studentRequest
 
         require("connect_connection.php");
 
-        $sql = "SELECT Request.S_id,Organization.O_id,Organization.O_name,AP_Request.AP_date,Request.R_status,Request.R_type,
-        Student.S_fname,Student.S_lname,  Request.R_position,Request.R_sdate,Request.R_fdate,      Organization.O_addr,Colabor.C_fname,
+        $sql = "SELECT Request.S_id,Request.R_id,Organization.O_id,Organization.O_name,AP_Request.AP_date,Request.R_status,Request.R_type,
+        Student.S_fname,Student.S_lname,  Request.R_position,Request.R_sdate,Request.R_fdate,Organization.O_addr,Colabor.C_fname,
         Colabor.C_lname,Colabor.C_email,Colabor.C_tel,
         Data_namedoc.D_fname,Data_namedoc.D_lname,
         Data_namedoc.D_position,
@@ -84,50 +89,54 @@ class studentRequest
         $result = $conn->query($sql);
 
         while ($my_row = $result->fetch_assoc()) {
-         
 
-            $S_id= $my_row["S_id"];
-            $O_id= $my_row["O_id"];
-            $O_name= $my_row["O_name"];
-            $AP_date= $my_row["AP_date"];
-            $R_status= $my_row["R_status"];
-            $R_type= $my_row["R_type"];
-            $S_fname= $my_row["S_fname"];
-            $S_lname= $my_row["S_lname"];
-            $R_position= $my_row["R_position"];
-            $R_sdate= $my_row["R_sdate"];
-            $R_fdate= $my_row["R_fdate"];
-            $O_addr= $my_row["O_addr"];
-            $C_fname= $my_row["C_fname"];
-            $C_lname= $my_row["C_lname"];
-            $C_email= $my_row["C_email"];
-            $C_tel= $my_row["C_tel"];
-            $D_fname= $my_row["D_fname"];
-            $D_lname= $my_row["D_lname"];
-            $D_position= $my_row["D_position"];
+
+            $S_id = $my_row["S_id"];
+            $R_id = $my_row["R_id"];
+            $O_id = $my_row["O_id"];
+            $O_name = $my_row["O_name"];
+            $AP_date = $my_row["AP_date"];
+            $R_status = $my_row["R_status"];
+            $R_type = $my_row["R_type"];
+            $S_fname = $my_row["S_fname"];
+            $S_lname = $my_row["S_lname"];
+            $R_position = $my_row["R_position"];
+            $R_sdate = $my_row["R_sdate"];
+            $R_fdate = $my_row["R_fdate"];
+            $O_addr = $my_row["O_addr"];
+            $C_fname = $my_row["C_fname"];
+            $C_lname = $my_row["C_lname"];
+            $C_email = $my_row["C_email"];
+            $C_tel = $my_row["C_tel"];
+            $D_fname = $my_row["D_fname"];
+            $D_lname = $my_row["D_lname"];
+            $D_position = $my_row["D_position"];
             $DR_path = $my_row["DR_path"];
 
 
-            $studentRequestList[] = new studentRequest(  $S_id,
-            $O_id,
-            $O_name,
-            $AP_date,
-            $R_status,
-            $R_type,
-            $S_fname,
-            $S_lname,
-            $R_position,
-            $R_sdate,
-            $R_fdate,
-            $O_addr,
-            $C_fname,
-            $C_lname,
-            $C_email,
-            $C_tel,
-            $D_fname,
-            $D_lname,
-            $D_position,
-            $DR_path);
+            $studentRequestList[] = new studentRequest(
+                $S_id,
+                $R_id,
+                $O_id,
+                $O_name,
+                $AP_date,
+                $R_status,
+                $R_type,
+                $S_fname,
+                $S_lname,
+                $R_position,
+                $R_sdate,
+                $R_fdate,
+                $O_addr,
+                $C_fname,
+                $C_lname,
+                $C_email,
+                $C_tel,
+                $D_fname,
+                $D_lname,
+                $D_position,
+                $DR_path
+            );
         }
 
         require("connection_close.php");
