@@ -15,10 +15,9 @@
 
             <?php echo $userid ?>
 
-            <?php foreach ($studentRequestList as $studentRequest) { ?>
                
                     <div class="column">
-                        <div class="box">
+                        <div class="box1">
 
                   
                             <p5><?php echo "$studentRequest->R_type"; ?></p5><br/>
@@ -41,8 +40,9 @@
                             
                             <p5><?php echo "ข้อมูลสถานการออกหนังสืออนุเคราะห์"; ?></p5><br/>
                             <p5><?php echo "ชื่อ $studentRequest->D_fname"; ?></p5>
-                            p5><?php echo "  $studentRequest->D_lname"; ?></p5><br/>
-                            <p5><?php echo "ตำแหน่ง $studentRequest->R_status"; ?></p5><br/><br/><br/>
+                            <p5><?php echo "  $studentRequest->D_lname"; ?></p5><br/>
+                            <p5><?php echo "ตำแหน่ง $studentRequest->R_position"; ?></p5><br/>
+                            <p5><?php echo "สถานะ $studentRequest->R_status"; ?></p5><br/><br/><br/>
                             <p5><?php echo "$studentRequest->DR_path"; ?></p5><br/><br/><br/>
                             
                             <button type="button" href="#" class="btn btn-success">ย้อนกลับ</button>
@@ -54,7 +54,7 @@
                     </div>
 
 
-            <?php } ?>
+            
         
         </center>
 
