@@ -10,7 +10,7 @@
 <body bgcolor="#DDDDDD">
   <br><br><br>
 
-
+  <!-- set ค่าหน้ากระดาษ -->
   <div class="container">
     <div class="row align-items-start ">
       <div class='col-sm-16 m-auto'>
