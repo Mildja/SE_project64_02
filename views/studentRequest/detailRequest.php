@@ -1,15 +1,4 @@
-<?php
 
-$userid = $_SESSION['userid'];
-
-
-session_start();
-
-if (!$_SESSION['userid']) {
-    header("Location: index.php");
-} else {
-
-?>
 
     <!DOCTYPE html>
     <html>
@@ -27,7 +16,7 @@ if (!$_SESSION['userid']) {
             <?php echo $userid ?>
 
             <?php foreach ($studentRequestList as $studentRequest) { ?>
-                <?php if ($studentRequest->S_id ==  $userid  ) { ?>
+               
                     <div class="column">
                         <div class="box">
 
@@ -64,7 +53,6 @@ if (!$_SESSION['userid']) {
 
                     </div>
 
-                <?php } ?>
 
             <?php } ?>
         
@@ -79,4 +67,3 @@ if (!$_SESSION['userid']) {
  
 
     </html>
-<?php } ?>
