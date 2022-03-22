@@ -79,7 +79,9 @@ session_start();
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           $AP_id,$AP_date,$AP_approve,$AP_note,$A_id,$R_id
+                          <form method="get" action="">
                           <div class="modal-body">
+                          
                             <!-- ช่องกรอกข้อความ byมายด์ -->
                             <div class="mb-3 text-dark">
                               <label for="exampleFormControlTextarea1" class="form-label">เหตุผลที่ไม่อนุมัติ</label>
@@ -92,6 +94,7 @@ session_start();
                             <button type="submit" class="btn btn-secondary" name="action" value="index" data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
                           </div>
+                          </form>
                         </div>
                       </div>
                     </div>
