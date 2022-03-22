@@ -43,7 +43,7 @@ if (!$_SESSION['userid']) {
                             <p5><?php echo "$studentRequest->R_type"; ?></p5><br/>
                             <p5><?php echo "$studentRequest->AP_date"; ?></p5><br/>
                             <p5><?php echo "$studentRequest->R_status"; ?></p5><br/><br/>
-                            <button type="button" href="?controller=studentRequest&action=detailRequest" class="btn btn-success">รายละเอียด</button>
+                            <button type="button" class="btn btn-success" href="?controller=studentRequest&action=detailRequest&R_id=$studentRequest->R_id">รายละเอียด</button>
                            
                         </div>
                         <!-- ?controller=studentRequest&action=detailRequest -->
