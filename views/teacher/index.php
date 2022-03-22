@@ -1,3 +1,16 @@
+<?php
+
+$userid = $_SESSION['userid'];
+
+
+session_start();
+
+if (!$_SESSION['userid']) {
+    header("Location: index.php");
+} else {
+
+?>
+
 <html>
 
 <head>
@@ -15,7 +28,8 @@
     <div class="row align-items-start ">
       <div class='col-sm-16 m-auto'>
 
-
+      <?php echo $userid ?>
+      
         <!--start แถบหัว-->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
@@ -112,3 +126,4 @@
   </div>
 </body>
 <html>
+<?php } ?>
