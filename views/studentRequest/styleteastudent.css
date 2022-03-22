@@ -11,3 +11,17 @@
     background: #b0b0ff;
     color: #fff;
 }
+
+.box1{
+    background-color: aliceblue;
+    padding: 30px;
+    margin: 10px;
+    height: 900px;
+    width: 800px;
+    border-radius: 30px;
+    text-align: start;
+}
+.box1:hover{
+    background: #b0b0ff;
+    color: #fff;
+}
