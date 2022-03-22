@@ -77,7 +77,7 @@
                           <div class="modal-footer">
                             <input type="hidden" name="controller" value="teacher"/>
                             <button type="submit" class="btn btn-secondary" name="action" value="index" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" name="action" value="updateAP_note">Save</button>
+                            <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
                           </div>
                         </div>
                       </div>
