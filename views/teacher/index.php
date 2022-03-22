@@ -1,13 +1,12 @@
 <?php
-
+//เก็บค่า userid ที่ loginเข้ามา
 $userid = $_SESSION['userid'];
-
 
 session_start();
 
-if (!$_SESSION['userid']) {
-    header("Location: index.php");
-} else {
+      if (!$_SESSION['userid']) {
+           header("Location: index.php");
+      } else {
 
 ?>
 
@@ -126,4 +125,6 @@ if (!$_SESSION['userid']) {
   </div>
 </body>
 <html>
+
+
 <?php } ?>
