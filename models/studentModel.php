@@ -214,6 +214,23 @@ class studentRequest
         $DR_path);
 
     }
+    public static function Add($R_type,$R_position,$R_cost,$R_room,$R_sdate, $R_fdate)
+
+    { 
+
+       require("connect_connection.php");
+
+      
+
+       $sql = "INSERT INTO `Request` (`R_type`, `R_position`, `R_cost`, `R_room`, `R_sdate`, `R_fdate`) VALUES ('$R_type', '$R_position', '$R_cost', '$R_room', '$R_sdate', '$R_fdate')";
+
+       $result = $conn->query($sql);
+
+       require("connection_close.php");
+
+       return  ;
+
+    }
 
 
 }
