@@ -1,15 +1,4 @@
-<?php
 
-$userid = $_SESSION['userid'];
-
-
-session_start();
-
-if (!$_SESSION['userid']) {
-    header("Location: index.php");
-} else {
-
-?>
 
     <!DOCTYPE html>
     <html>
@@ -165,4 +154,3 @@ if (!$_SESSION['userid']) {
  
 
     </html>
-<?php } ?>
