@@ -18,10 +18,6 @@
                     <div class="column">
                         <div class="box2">
 
-                            <label><p5>วันที่ส่งเอกสารไฟล์คำร้อง &nbsp;<input type="date" name="date"
-                                    value ="<?php echo "$studentRequest->AP_date"; ?>"/></p5></label><br/><br/>
-
-
                             <select class="form-select" aria-label="Default select example">
                             <option selected>เลือก</option>
                             <option value="1">ฝึกงาน</option>
