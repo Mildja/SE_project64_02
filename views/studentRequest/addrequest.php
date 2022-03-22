@@ -70,8 +70,8 @@
 
 
                             <div class="col-12">
-                                <label for="O_name" class="form-label" placeholder="ชื่อสถานประกอบการ" aria-label="ชื่อสถานประกอบการ"></label>
-                                <input type="text" class="form-control" name ="O_name" >
+                                <label for="O_name" class="form-label" ></label>
+                                <input type="text" class="form-control" name ="O_name"placeholder="ชื่อสถานประกอบการ" aria-label="ชื่อสถานประกอบการ" >
                                 <p5><?php echo "$studentRequest->O_name"; ?></p5><br/>
                             </div>
 
@@ -82,7 +82,7 @@
                                 <p5><?php echo "$studentRequest->O_addr"; ?></p5><br/>
                             </div>
 
-                            <p3><label>ข้อมูลผู้ประสานงาน</label></p3>
+                            <p3><label>ข้อมูลผู้ประสานงาน</label></p3><br/>
 
 
                             <div class="row">
