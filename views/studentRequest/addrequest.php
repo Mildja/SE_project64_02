@@ -69,9 +69,13 @@ if (!$_SESSION['userid']) {
                             </div>
 
                             
-                            <p5><?php echo "วันเริ่มฝึกงาน : $studentRequest->R_sdate"; ?></p5><br/>
+                            <label><p5>วันเริ่มฝึกงาน <input type="date" name="date"
+                                    value ="<?php echo "$studentRequest->R_sdate"; ?>"/></p5></label><br>
                             
-                            <p5><?php echo "วันสิ้นสุดฝึกงาน : $studentRequest->R_fdate"; ?></p5><br/><br/>
+                            <label><p5>วันสิ้นสุดฝึกงาน <input type="date" name="date"
+                                    value ="<?php echo "$studentRequest->R_fdate"; ?>"/></p5></label><br>
+                            
+                                    
                             
                             <label>ข้อมูลผู้ประสานงาน</label>
                             <div class="col-12">
@@ -135,6 +139,10 @@ if (!$_SESSION['userid']) {
                             </div>
 
 
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">เพิ่มไฟล์คำร้อง (เป็น pdf ไฟล์ และตั้งชื่อ file เป็น Request_รหัสนิสิต.pdf เท่านั้น )</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
 
                             
                             <button type="button" href="#" class="btn btn-success">ย้อนกลับ</button>
