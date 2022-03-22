@@ -28,7 +28,7 @@ class Organization
 
         $OrganizationList = [];
 
-        require("connect_database.php");
+        require("connect_connection.php");
 
         $sql = "SELECT * FROM Organization";
 
@@ -36,11 +36,11 @@ class Organization
 
         while ($my_row = $result->fetch_assoc()) {
 
-            $O_id = $my_row[O_id];
+            $O_id = $my_row['O_id'];
 
-            $O_name = $my_row[O_name];
+            $O_name = $my_row['O_name'];
 
-            $O_addr = $my_row[O_addr];
+            $O_addr = $my_row['O_addr'];
 
 
             $OrganizationList[] = new Organization($O_id,$O_name,$O_addr);
@@ -51,7 +51,23 @@ class Organization
 
         return $OrganizationList;
     }
+    public static function Add($O_name,$O_addr)
 
+    { 
+
+       require("connect_connection.php");
+
+      
+
+       $sql = "INSERT INTO `Organization` (`O_name`, `O_addr`) VALUES ('$O_name', '$O_addr')";
+
+       $result = $conn->query($sql);
+
+       require("connection_close.php");
+
+       return  ;
+
+    }
 }
 
 ?>
