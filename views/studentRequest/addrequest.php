@@ -26,68 +26,67 @@ if (!$_SESSION['userid']) {
 
             <?php echo $userid ?>
 
-      
                     <div class="column">
-                        <div class="box2">
+                        <div class="box">
 
                             <select class="form-select" aria-label="Default select example">
                             <option selected>เลือก</option>
                             <option value="1">ฝึกงาน</option>
                             <option value="2">สหกิจ</option>
-                            <p5><?php echo "$studentRequest->R_type"; ?></p5><br/>
+                            <p5><?php echo "$studentRequest->R_type"; ?></p5><br/><br/>
                             </select>
 
 
                             <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ">
-                                <p5>ชื่อ<?php echo " $studentRequest->S_fname"; ?></p5>
+                                <p5><?php echo " $studentRequest->S_fname"; ?></p5>
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="นามสกุล" aria-label="นามสกุล">
-                                <p5>นามสกุล<?php echo " $studentRequest->S_lname"; ?></p5><br/><br/>
+                                <p5><?php echo " $studentRequest->S_lname"; ?></p5><br/><br/>
                             </div>
                             </div>
 
                             <div class="col-12">
                                 <label for="R_position" class="form-label">ตำแหน่ง</label>
                                 <input type="text" class="form-control" name ="R_position" >
-                                <p5><?php echo "$studentRequest->R_position"; ?></p5><br/>
+                                <p5><?php echo "$studentRequest->R_position"; ?></p5><br/><br/>
                             </div>
                            
 
                             <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" >
-                                <p5>ค่าตอบแทน<?php echo " $studentRequest->R_cost"; ?></p5><br/>
+                                <input type="text" class="form-control" > <label>ค่าตอบแทน</label>
+                                <p5><?php echo " $studentRequest->R_cost"; ?></p5><br/>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" >
-                                <p5>ที่พัก<?php echo " $studentRequest->R_room"; ?></p5><br/>
+                                <input type="text" class="form-control" ><label>ที่พัก</label>
+                                <p5><?php echo " $studentRequest->R_room"; ?></p5><br/><br/>
                             </div>
                             </div>
 
                             
                             <label><p5>วันเริ่มฝึกงาน <input type="date" name="date"
-                                    value ="<?php echo "$studentRequest->R_sdate"; ?>"/></p5></label><br>
+                                    value ="<?php echo "$studentRequest->R_sdate"; ?>"/></p5></label><br/><br/>
                             
                             <label><p5>วันสิ้นสุดฝึกงาน <input type="date" name="date"
-                                    value ="<?php echo "$studentRequest->R_fdate"; ?>"/></p5></label><br>
+                                    value ="<?php echo "$studentRequest->R_fdate"; ?>"/></p5></label><br/><br/>
                             
                                     
                             
-                            <label>ข้อมูลผู้ประสานงาน</label>
+                            <p5><label>ข้อสถานประกอบการ</label></p5><br/>
                             <div class="col-12">
                                 <label for="O_name" class="form-label">ชื่อสถานประกอบการ</label>
                                 <input type="text" class="form-control" name ="O_name" >
-                                <p5><?php echo "$studentRequest->O_name"; ?></p5><br/>
+                                <p5><?php echo "$studentRequest->O_name"; ?></p5><br/><br/>
                             </div>
 
 
                             <div class="col-12">
                                 <label for="O_addr" class="form-label">ที่อยู่</label>
                                 <input type="text" class="form-control" name ="O_addr" >
-                                <p5><?php echo "$studentRequest->O_addr"; ?></p5><br/>
+                                <p5><?php echo "$studentRequest->O_addr"; ?></p5><br/><br/>
                             </div>
 
                             <label>ข้อมูลผู้ประสานงาน</label>
@@ -154,8 +153,6 @@ if (!$_SESSION['userid']) {
 
                     </div>
 
-
-      
         
         </center>
 
