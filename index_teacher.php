@@ -13,9 +13,17 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 }
 
 
+    session_start();
+
+    if (!$_SESSION['userid']) {
+        header("Location: index.php");
+    } else {
+
+
+
+
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -96,7 +104,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-2"> </i>
+                                <i class="fas fa-user me-2"> </i><?php echo $userid ?>
                            
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -126,4 +134,4 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 </body>
 
 </html>
-
+<?php } ?>
