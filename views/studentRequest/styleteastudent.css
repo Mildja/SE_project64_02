@@ -25,3 +25,17 @@
     background: #b0b0ff;
     color: #fff;
 }
+
+.box2{
+    background-color: aliceblue;
+    padding: 30px;
+    margin: 10px;
+    height: 100%;
+    width: 800px;
+    border-radius: 30px;
+    text-align: start;
+}
+.box2:hover{
+    background: #b0b0ff;
+    color: #fff;
+}
