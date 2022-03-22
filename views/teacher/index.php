@@ -62,25 +62,27 @@
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">เหตุผลที่ไม่อนุมัติ</h5>
+                            <h5 class="modal-title text-dark" id="exampleModalLabel">เหตุผลที่ไม่อนุมัติ</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
 
                           <div class="modal-body">
                             <!-- ช่องกรอกข้อความ byมายด์ -->
-                            <div class="mb-3">
+                            <div class="mb-3 text-dark">
                               <label for="exampleFormControlTextarea1" class="form-label">เหตุผลที่ไม่อนุมัติ</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3"></textarea>
+                              <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3"></textarea>
                             </div>
                           </div>
 
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <input type="hidden" name="controller" value="teacher"/>
+                            <button type="submit" class="btn btn-secondary" name="action" value="index" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" name="action" value="updateAP_note">Save</button>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <!-- จบ Modal -->
                     <br><br>
 
 
@@ -88,7 +90,9 @@
                 </div>
               <?php } ?>
             <?php } ?>
+            <!-- จบ วนลูปข้อมูล -->
           </div>
+          <!--จบหน้า1-->
 
           <!--หน้า2ของเตย-->
           <div class="tab-pane fade" id="page2" role="tabpanel" aria-labelledby="page2-tab">
