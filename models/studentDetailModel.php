@@ -1,6 +1,6 @@
 <?php
 
-class detailrequest
+class detailrequest1
 
 {
 
@@ -82,7 +82,7 @@ class detailrequest
             $DR_path = $my_row["DR_path"];
            
 
-            $detailrequestList[] = new detailrequest($R_type,$S_fname,$S_lname,$R_position,$R_sdate,$R_fdate,$O_name,$O_addr,$C_fname,$C_lname,$C_email,$C_tel,$D_fname,$D_lname,$D_position,$R_status,$DR_path);
+            $detailrequestList[] = new detailrequest1($R_type,$S_fname,$S_lname,$R_position,$R_sdate,$R_fdate,$O_name,$O_addr,$C_fname,$C_lname,$C_email,$C_tel,$D_fname,$D_lname,$D_position,$R_status,$DR_path);
 
         }
 
