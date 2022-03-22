@@ -25,7 +25,7 @@
                             <p5><?php echo "$studentRequest->R_type"; ?></p5><br/><br/>
                             </select>
 
-                            <br/><br/>
+                            <br/>
                             <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ">
@@ -33,14 +33,14 @@
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="นามสกุล" aria-label="นามสกุล">
-                                <p5><?php echo " $studentRequest->S_lname"; ?></p5><br/><br/>
+                                <p5><?php echo " $studentRequest->S_lname"; ?></p5><br/>
                             </div>
                             </div>
 
                             <div class="col-12">
                                 <label for="R_position" class="form-label">ตำแหน่ง</label>
                                 <input type="text" class="form-control" name ="R_position" >
-                                <p5><?php echo "$studentRequest->R_position"; ?></p5><br/><br/>
+                                <p5><?php echo "$studentRequest->R_position"; ?></p5><br/>
                             </div>
                            
 
@@ -53,7 +53,7 @@
                             <div class="col">
                             <label>ที่พัก</label>
                                 <input type="text" class="form-control" >
-                                <p5><?php echo " $studentRequest->R_room"; ?></p5><br/><br/>
+                                <p5><?php echo " $studentRequest->R_room"; ?></p5><br/>
                             </div>
                             </div>
 
@@ -66,7 +66,9 @@
                             
                                     
                             
-                            <p5><label>ข้อสถานประกอบการ</label></p5><br/><br/>
+                            <p3><label>ข้อสถานประกอบการ</label></p3><br/>
+
+
                             <div class="col-12">
                                 <label for="O_name" class="form-label">ชื่อสถานประกอบการ</label>
                                 <input type="text" class="form-control" name ="O_name" >
@@ -80,7 +82,9 @@
                                 <p5><?php echo "$studentRequest->O_addr"; ?></p5><br/>
                             </div>
 
-                            <label>ข้อมูลผู้ประสานงาน</label>
+                            <p3><label>ข้อมูลผู้ประสานงาน</label></p3>
+
+
                             <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ">
@@ -88,7 +92,7 @@
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="นามสกุล" aria-label="นามสกุล">
-                                <p5><?php echo " $studentRequest->C_lname"; ?></p5><br/><br/>
+                                <p5><?php echo " $studentRequest->C_lname"; ?></p5><br/>
                             </div>
                             </div>
 
@@ -107,7 +111,8 @@
                             </div>
 
                             
-                            <label>ข้อมูลสถานการออกหนังสืออนุเคราะห์</label>
+                            <p3><label>ข้อมูลสถานการออกหนังสืออนุเคราะห์</label></p3>
+
 
                             <div class="row">
                             <div class="col">
@@ -116,7 +121,7 @@
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="นามสกุล" aria-label="นามสกุล">
-                                <p5><?php echo " $studentRequest->D_lname"; ?></p5><br/><br/>
+                                <p5><?php echo " $studentRequest->D_lname"; ?></p5><br/>
                             </div>
                             </div>
 
