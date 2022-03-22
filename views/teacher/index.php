@@ -78,12 +78,12 @@ session_start();
                             <h5 class="modal-title text-dark" id="addModalLabel">เหตุผลที่ไม่อนุมัติ</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
-
+                          $AP_id,$AP_date,$AP_approve,$AP_note,$A_id,$R_id
                           <div class="modal-body">
                             <!-- ช่องกรอกข้อความ byมายด์ -->
                             <div class="mb-3 text-dark">
                               <label for="exampleFormControlTextarea1" class="form-label">เหตุผลที่ไม่อนุมัติ</label>
-                              <textarea class="form-control " id='AP_note' aria-label=".form-control-sm example" rows="3"></textarea>
+                              <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3" name="AP_note" require></textarea>
                             </div>
                           </div>
 
