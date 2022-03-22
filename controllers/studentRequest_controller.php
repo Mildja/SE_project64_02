@@ -7,10 +7,17 @@
     }
    
 
-    public function detailRequest(){
-         echo "123";
-        $studentRequestList=studentRequest::getAll();
+  
+
+   public function detailRequest()
+   {
        
+       $id=$_GET['R_id'];
+       echo $id;
+       $studentRequest  = studentRequest::get($id);
+       echo $studentRequest->R_id;
+      //$studentRequestList=studentRequest::getAll();
        require_once('./views/studentRequest/detailRequest.php');
+       
    }
 }?>
