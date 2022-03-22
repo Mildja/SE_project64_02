@@ -39,15 +39,15 @@ class Student
 
         while ($my_row = $result->fetch_assoc()) {
 
-            $S_id= $my_row[S_id];
+            $S_id= $my_row['S_id'];
 
-            $S_pass = $my_row[S_pass];
+            $S_pass = $my_row['S_pass'];
 
-            $S_fname = $my_row[S_fname];
+            $S_fname = $my_row['S_fname'];
 
-            $S_lname = $my_row[S_lname];
+            $S_lname = $my_row['S_lname'];
 
-            $S_year = $my_row[S_year];
+            $S_year = $my_row['S_year'];
 
             $StudentList[] = new Student($S_id,$S_pass,$S_fname,$S_lname,$S_year);
 
@@ -57,6 +57,24 @@ class Student
 
         return $StudentList;
     }
+    public static function Add($S_fname,$S_lname)
+
+    { 
+
+       require("connect_connection.php");
+
+      
+
+       $sql = "INSERT INTO `Student` (`S_fname`, `S_lname`) VALUES ('$S_fname', '$S_lname')";
+
+       $result = $conn->query($sql);
+
+       require("connection_close.php");
+
+       return  ;
+
+    }
+    
 
 }
 
