@@ -66,7 +66,7 @@ if (!$_SESSION['userid']) {
         </center>
 
         <!-- <center><a class="button" href="?controller=order&action=newOrder">Addnew</a></center> -->
-
+        <a class="btn btn-success" href=?controller=studentRequest&action=newRequest>รายละเอียด</a>
 
 
     </body>
