@@ -172,10 +172,10 @@ class teacher
         require("connection_close.php");
         return $teacherList;
     }
-    public function addAP_request($AP_id,$AP_date,$AP_approve,$AP_note,$A_id,$R_id)
+    public function addAP_request($AP_date,$AP_approve,$AP_note,$A_id,$R_id)
     {
         require("connect_connnection.php");
-        $sql = "INSERT INTO `AP_Request`(`AP_id`,`AP_date`,`AP_approve`,`AP_note`,`A_id`,`R_id`) VALUES ('$AP_id','$AP_date','$AP_approve','$AP_note','$A_id','$R_id')";
+        $sql = "INSERT INTO `AP_Request`(`AP_id`,`AP_date`,`AP_approve`,`AP_note`,`A_id`,`R_id`) VALUES (NULL,'$AP_date','$AP_approve','$AP_note','$A_id','$R_id')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "add success $result row";

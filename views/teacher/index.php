@@ -68,6 +68,9 @@ session_start();
                     <p5><?php echo "$teacher->R_status"; ?></p5><br>
 
                     <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">อนุมัติ</a>
+
+
+
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addModal">
                       ไม่อนุมัติ
                     </button>
@@ -80,15 +83,20 @@ session_start();
                             <h5 class="modal-title text-dark" id="addModalLabel">เหตุผลที่ไม่อนุมัติ</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
-                          $AP_id,$AP_date,$AP_approve,$AP_note,$A_id,$R_id
+                         
                           <form method="get" action="">
                           <div class="modal-body">
-                          
+                           $AP_id,$AP_date,$AP_approve,$AP_note,$A_id,$R_id
                             <!-- ช่องกรอกข้อความ byมายด์ -->
                             <div class="mb-3 text-dark">
                               <label for="exampleFormControlTextarea1" class="form-label">เหตุผลที่ไม่อนุมัติ</label>
                               <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3" name="AP_note" require></textarea>
                             </div>
+                            <?php $AP_approve="ไม่อนุมัติ";?>
+                            <?php $A_id= $teacher->A_id;?>
+                            <?php $R_id= $userid;?>
+                            <?php $AP_date= date("Y-m-d");?>
+                           
                           </div>
 
                           <div class="modal-footer">

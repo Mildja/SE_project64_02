@@ -6,13 +6,12 @@
     }
     public function addAP_request()
     {
-        $AP_id = $_GET['AP_id'];
         $AP_date = $_GET['AP_date'];
         $AP_approve= $_GET['AP_approve'];
         $AP_note= $_GET['AP_note'];
         $A_id= $_GET['A_id'];
         $R_id= $_GET['R_id'];
-        teacher::addAP_request($AP_id,$AP_date,$AP_approve,$AP_note,$A_id,$R_id);
+        teacher::addAP_request($AP_date,$AP_approve,$AP_note,$A_id,$R_id);
         teacherController::index();
     }
    
