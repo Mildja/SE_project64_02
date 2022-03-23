@@ -57,23 +57,23 @@ class Doc_Request
         return $Doc_Request;
     }
 
-    // public static function Add($DR_path)
+    public static function Add($DR_path,$R_id,$date1)
 
-    // { 
+    { 
 
-    //    require("connect_connection.php");
+       require("connect_connection.php");
 
-      
+    
 
-    //    $sql = "INSERT INTO `Request` (`id_order`, `date`, `condition`, `id_cus`, `Staff_id`, `เงื่อนไข`) VALUES ('$id_order', '$date', '$condition', '$id_cus', '$Staff_id', '$เงื่อนไข')";
+       $sql = "INSERT INTO `Doc_Request` (`DR_id`, `DR_date`, `DR_path`, `R_id`) VALUES (NULL, '$date1', '$DR_path', '$R_id')";
 
-    //    $result = $conn->query($sql);
+       $result = $conn->query($sql);
 
-    //    require("connection_close.php");
+       require("connection_close.php");
 
-    //    return  ;
+       return  ;
 
-    // }
+    }
 
 }
 
