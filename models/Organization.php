@@ -59,7 +59,7 @@ class Organization
 
       
 
-       $sql = "INSERT INTO `Organization` (`O_name`, `O_addr`) VALUES ('$O_name', '$O_addr')";
+       $sql = "INSERT INTO `Organization` (`O_id`, `O_name`, `O_addr`) VALUES (NULL,'$O_name', '$O_addr')";
 
        $result = $conn->query($sql);
 
@@ -67,6 +67,25 @@ class Organization
 
        return  ;
 
+    }
+    public static function get($name)
+    {
+        
+        require("connect_connection.php");
+        $sql="SELECT * FROM Organization WHERE O_name = '$name' ";
+        $result=$conn->query($sql);
+        $my_row=$result->fetch_assoc();
+        
+        
+        $O_id = $my_row['O_id'];
+
+        $O_name = $my_row['O_name'];
+
+        $O_addr = $my_row['O_addr'];
+
+        
+        require("connection_close.php");
+        return new Organization($O_id,$O_name,$O_addr);
     }
 }
 
