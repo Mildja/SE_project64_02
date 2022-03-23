@@ -15,7 +15,7 @@ if (!$_SESSION['userid']) {
     <html>
 
     <head>
-        <link rel="stylesheet" href="views/studentRequest/styleteastudent.css">
+        <link rel="stylesheet" href="views/studentRequest/styletestudent.css">
     </head>
 
     <body bgcolor="#f0fff0">
