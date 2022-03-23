@@ -128,7 +128,25 @@ session_start();
 
           <!--หน้า3ของปอ-->
           <div class="tab-pane fade" id="page3" role="tabpanel" aria-labelledby="page3-tab">
-            หน้า3
+            <!--หน้า3-->
+
+            <?php foreach ($teacher_list as $teacher) { ?>
+                   
+              <?php if ($teacher->R_status == "ไม่อนุมัติ" ) { ?>
+                <div class="column">
+                  <div class="box">
+
+                    <h2><?php echo "$teacher->O_name"; ?></h2>
+                    <p5><?php echo "วันที่ส่งเอกสาร $teacher->R_sdate";?></p5><br>
+                    <p5><?php echo "$teacher->R_type"; ?></p5><br>
+                    <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
+
+                  </div>
+                </div>
+              <?php } ?>
+            <?php } ?>
+
+
           </div>
         </div>
         <!--จบ-->
