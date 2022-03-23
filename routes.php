@@ -1,7 +1,7 @@
 <?php
 $controllers = array(
     'pages' => ['home', 'error'],
-    'teacher' => ['index', 'addAP_request'],
+    'teacher' => ['index', 'addAP_request','updateRequest'],
     'studentRequest' => ['index', 'detailRequest', 'newRequest','addRequest'],
 
 
