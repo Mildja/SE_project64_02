@@ -29,6 +29,7 @@ function call($controller, $action)
             require_once("./models/Data_namedoc.php");
             require_once("./models/Organization.php");
             require_once("./models/Student.php");
+            require_once("./models/Doc_Request.php");
             $controller = new studentRequestController();
             break;
     }
