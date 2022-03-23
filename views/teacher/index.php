@@ -29,7 +29,7 @@ session_start();
 
       <?php echo $userid ?>
       
-        <!--start แถบหัว-->
+        <!--start แถบหัว ไม่ต้องไปยุ่งไรกับน้อง-->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">ใบคำร้องทั้งหมด</button>
@@ -92,6 +92,7 @@ session_start();
                               <label for="exampleFormControlTextarea1" class="form-label">เหตุผลที่ไม่อนุมัติ</label>
                               <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3" name="AP_note" require></textarea>
                             </div>
+                            <!-- ส่งค่าแต่น่าจะส่งผิดน้องยังไม่เข้าเดี่ยวต้องไปเช็คเรื่อง value -->
                             <input  type="hidden"  name="AP_approve" value="ไม่อนุมัติ"/>
                             <input  type="hidden"  name="A_id" value="$teacher->A_id"/>
                             <input  type="hidden"  name="R_id" value="$userid"/>
@@ -102,6 +103,8 @@ session_start();
                             <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
                           </div>
                           </form>
+
+
                         </div>
                       </div>
                     </div>
