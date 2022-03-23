@@ -1,0 +1,35 @@
+.box{
+    background-color: aliceblue;
+    padding: 30px;
+    margin: 10px;
+    height: 200px;
+    max-width: 50%;
+    border-radius: 30px;
+    text-align: start;
+}
+.box:hover{
+    background: #b0b0ff;
+    color: #fff;
+}
+
+.box1{
+    background-color: aliceblue;
+    padding: 30px;
+    margin: 10px;
+    height: 100%;
+  max-width: 50%;
+    border-radius: 30px;
+    text-align: start;
+}
+
+
+.box2{
+    background-color: aliceblue;
+    padding: 30px;
+    margin: 10px;
+    height: 100%;
+    max-width: 50%;
+  
+    border-radius: 30px;
+    text-align: start;
+}
