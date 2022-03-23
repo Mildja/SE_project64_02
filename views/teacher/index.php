@@ -58,7 +58,7 @@ session_start();
             <!--วนลูปแสดงข้อมูล-->
             <?php foreach ($teacher_list as $teacher) { ?>
               <!--เงื่อนไขใครเงื่อนไขมันเลยตามหัวข้อ-->
-              <?php if ($teacher->R_status == "รอดำเนินการ" && $teacher->DS_id == "ยังไม่ได้อัพเอกสารขอความอนุเคราะห์") { ?>
+              <?php if ($teacher->R_status == "รอพิจารณา" && $teacher->DS_id == "ยังไม่ได้อัพเอกสารขอความอนุเคราะห์") { ?>
                 <div class="column">
                   <div class="box">
 
