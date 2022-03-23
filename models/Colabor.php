@@ -4,10 +4,10 @@ class Colabor
 
 {
 
-    public $C_id,$C_fname,$C_lname,$C_email,$C_tel,$O_id,$password,$userlevel;
+    public $C_id,$C_fname,$C_lname,$C_email,$C_tel,$O_id;
 
 
-    public function __construct($C_id,$C_fname,$C_lname,$C_email,$C_tel,$O_id,$password,$userlevel)
+    public function __construct($C_id,$C_fname,$C_lname,$C_email,$C_tel,$O_id)
 
     {
 
@@ -23,9 +23,7 @@ class Colabor
 
         $this->O_id = $O_id;
 
-        $this->password = $password;
 
-        $this->userlevel = $userlevel;
 
     }
 
@@ -57,11 +55,9 @@ class Colabor
 
             $O_id= $my_row['O_id'];
 
-            $password = $my_row['password'];
 
-            $userlevel = $my_row['userlevel'];
 
-            $ColaborList[] = new Colabor($C_id,$C_fname,$C_lname,$C_email,$C_tel,$O_id,$password,$userlevel);
+            $ColaborList[] = new Colabor($C_id,$C_fname,$C_lname,$C_email,$C_tel,$O_id);
 
         }
 
@@ -69,8 +65,31 @@ class Colabor
 
         return $ColaborList;
     }
+    public static function get($name)
+    {
+        
+        require("connect_connection.php");
+        $sql="SELECT * FROM Colabor WHERE C_fname = '$name' ";
+        $result=$conn->query($sql);
+        $my_row=$result->fetch_assoc();
+        
+        
+        $C_id = $my_row['C_id'];
 
-    public static function Add($C_fname,$C_lname,$C_email,$C_tel)
+        $C_fname = $my_row['C_fname'];
+
+        $C_lname = $my_row['C_lname'];
+
+        $C_email = $my_row['C_email'];
+
+        $C_tel = $my_row['C_tel'];
+
+        $O_id= $my_row['O_id'];
+        
+        require("connection_close.php");
+        return new Colabor($C_id,$C_fname,$C_lname,$C_email,$C_tel,$O_id);
+    }
+    public static function Add($C_fname,$C_lname,$C_email,$C_tel,$O_id)
 
     { 
 
@@ -78,7 +97,8 @@ class Colabor
 
       
 
-       $sql = "INSERT INTO `Colabor` (`C_fname`, `C_lname`, `C_email`, `C_tel`) VALUES ('$C_fname', '$C_lname', '$C_email', '$C_tel')";
+       $sql = "INSERT INTO `Colabor` (`C_id`,`C_fname`, `C_lname`, `C_email`, `C_tel`, `O_id`) 
+       VALUES (NULL,'$C_fname', '$C_lname', '$C_email', '$C_tel', '$O_id')";
 
        $result = $conn->query($sql);
 
