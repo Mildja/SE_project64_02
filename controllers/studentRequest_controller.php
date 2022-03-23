@@ -73,7 +73,6 @@
         $list5=studentRequest::get2($R_type,$R_position,$R_cost,$R_room,$R_sdate, $R_fdate,$S_id,$C_id,$D_id);
         $R_id=$list5->R_id;
         $date1 =date("Y-m-d");
-
         Doc_Request::Add($DR_path,$R_id,$date1);
        //Student::Add($S_fname,$S_lname);
      
