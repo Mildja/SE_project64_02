@@ -31,28 +31,53 @@
    public function addRequest()
    {
        
-       $R_type = $_GET['R_type'];
-       $S_fname = $_GET['S_fname']; 
-       $S_lname = $_GET['S_lname'];
-       $R_position = $_GET['R_position'];
-       $R_cost = $_GET['R_cost'];
-       $R_room = $_GET['R_room'];
-       $R_sdate = $_GET['R_sdate'];
-       $R_fdate= $_GET['R_fdate'];
-       $O_name = $_GET['O_name'];
-       $O_addr = $_GET['O_addr'];
-       $C_fname = $_GET['C_fname'];
-       $C_lname = $_GET['C_lname'];
-       $C_email = $_GET['C_email'];
-       $C_tel = $_GET['C_tel'];
-       $D_fname = $_GET['D_fname'];
-       $D_lname = $_GET['D_lname'];
-       $D_position = $_GET['D_position'];
-       studentRequest::Add($R_type,$R_position,$R_cost,$R_room,$R_sdate, $R_fdate);
-       Colabor::Add($C_fname,$C_lname,$C_email,$C_tel);
-       Student::Add($S_fname,$S_lname);
+       $R_type = $_POST['R_type'];
+       $S_fname = $_POST['S_fname']; 
+       $S_lname = $_POST['S_lname'];
+       $R_position = $_POST['R_position'];
+       $R_cost = $_POST['R_cost'];
+       $R_room = $_POST['R_room'];
+       $R_sdate = $_POST['R_sdate'];
+       $R_fdate= $_POST['R_fdate'];
+       $O_name = $_POST['O_name'];
+       $O_addr = $_POST['O_addr'];
+       $C_fname = $_POST['C_fname'];
+       $C_lname = $_POST['C_lname'];
+       $C_email = $_POST['C_email'];
+       $C_tel = $_POST['C_tel'];
+       $D_fname = $_POST['D_fname'];
+       $D_lname = $_POST['D_lname'];
+       $D_position = $_POST['D_position'];
+
+    
        Organization::Add($O_name,$O_addr);
-       Data_namedoc::Add($D_fname,$D_lname,$D_position);
+       $list1=Organization::get($O_name);
+       $O_id=$list1->O_id;
+       Colabor::Add($C_fname,$C_lname,$C_email,$C_tel, $O_id);
+       $list2=Colabor::get($C_fname);
+       $C_id=$list2->C_id;
+       Data_namedoc::Add($D_fname,$D_lname,$D_position, $O_id);
+       $list3=Data_namedoc::get($D_fname);
+       $D_id=$list3->D_id;
+
+       $list4=Student::get($S_fname,$S_lname);
+       $S_id=$list4->S_id;
+      
+       studentRequest::Add($R_type,$R_position,$R_cost,$R_room,$R_sdate, $R_fdate,$S_id,$C_id,$D_id);
+
+        $fp = fopen($_FILES["DR_path"]["tmp_name"],"r");
+        $ReadBinary = fread($fp,filesize($_FILES["DR_path"]["tmp_name"]));
+        fclose($fp);
+        $DR_path = addslashes($ReadBinary);
+   
+        $list5=studentRequest::get2($R_type,$R_position,$R_cost,$R_room,$R_sdate, $R_fdate,$S_id,$C_id,$D_id);
+        $R_id=$list5->R_id;
+        $date1 =date("Y-m-d");
+
+        Doc_Request::Add($DR_path,$R_id,$date1);
+       //Student::Add($S_fname,$S_lname);
+     
+       
        studentRequestController::index();
    }
 
