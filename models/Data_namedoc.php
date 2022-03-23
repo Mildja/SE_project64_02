@@ -47,7 +47,7 @@ class Data_namedoc
 
             $D_position = $my_row['D_position'];
 
-            $O_idr = $my_row['O_id'];
+            $O_id = $my_row['O_id'];
 
 
             $Data_namedocList[] = new Data_namedoc($D_id,$D_fname,$D_lname,$D_position,$O_id);
@@ -59,7 +59,30 @@ class Data_namedoc
         return $Data_namedocList;
     }
 
-    public static function Add($D_fname,$D_lname,$D_position)
+    public static function get($name)
+    {
+        
+        require("connect_connection.php");
+        $sql="SELECT * FROM Data_namedoc WHERE D_fname = '$name' ";
+        $result=$conn->query($sql);
+        $my_row=$result->fetch_assoc();
+        
+        
+        $D_id = $my_row['D_id'];
+
+        $D_fname = $my_row['D_fname'];
+
+        $D_lname = $my_row['D_lname'];
+
+        $D_position = $my_row['D_position'];
+
+        $O_id = $my_row['O_id'];
+        
+        require("connection_close.php");
+        return new  Data_namedoc($D_id,$D_fname,$D_lname,$D_position,$O_id);
+    }
+
+    public static function Add($D_fname,$D_lname,$D_position, $O_id)
 
     { 
 
@@ -67,7 +90,7 @@ class Data_namedoc
 
       
 
-       $sql = "INSERT INTO `Data_namedoc` (`D_fname`, `D_lname`, `D_position`) VALUES ('$D_fname', '$D_lname', '$D_position')";
+       $sql = "INSERT INTO `Data_namedoc` (`D_id`, `D_fname`, `D_lname`, `D_position`, `O_id`) VALUES (NULL,'$D_fname', '$D_lname', '$D_position','$O_id')";
 
        $result = $conn->query($sql);
 
