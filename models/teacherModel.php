@@ -181,9 +181,9 @@ class teacher
         return "add success $result row";
     }
 
-    public static function updateRequest($HomeIso_ID,$VD_ID,$RH_ID,$ID_Card,$ID_ATK,$Initial_symptom,$SatusATK,$Satus){
+    public static function updateRequest($R_id,$R_status){
         require("connection_connect.php");
-        $sql="UPDATE HomeIsolation SET VD_ID='$VD_ID',RH_ID='$RH_ID', ID_Card='$ID_Card', ID_ATK='$ID_ATK', Initial_symptom='$Initial_symptom' , SatusATK='$SatusATK' , Satus='$Satus'WHERE HomeIso_ID='$HomeIso_ID'";
+        $sql="UPDATE Request SET R_status='$R_status'WHERE R_id='$R_id'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "Update success $result rows";

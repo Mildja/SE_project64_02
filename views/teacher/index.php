@@ -86,20 +86,17 @@ session_start();
                          
                           <form method="get" action="">
                           <div class="modal-body">
-                           $AP_id,$AP_date,$AP_approve,$AP_note,$A_id,$R_id
+                          
                             <!-- ช่องกรอกข้อความ byมายด์ -->
                             <div class="mb-3 text-dark">
                               <label for="exampleFormControlTextarea1" class="form-label">เหตุผลที่ไม่อนุมัติ</label>
                               <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3" name="AP_note" require></textarea>
                             </div>
-                            <?php $AP_approve="ไม่อนุมัติ";?>
-                            <?php $A_id= $teacher->A_id;?>
-                            <?php $R_id= $userid;?>
-                            <?php $AP_date= date("Y-m-d");?>
+                            <input  type="hidden"  name="AP_approve" value="ไม่อนุมัติ"/>
+                            <input  type="hidden"  name="A_id" value="$teacher->A_id"/>
+                            <input  type="hidden"  name="R_id" value="$userid"/>
+                            <input  type="hidden"  name="AP_date" value="date("Y-m-d")"/>
                            
-                          </div>
-
-                          <div class="modal-footer">
                             <input type="hidden" name="controller" value="teacher"/>
                             <button type="submit" class="btn btn-secondary" name="action" value="index" data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
