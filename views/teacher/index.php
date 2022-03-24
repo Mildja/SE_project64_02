@@ -74,7 +74,6 @@ session_start();
                     <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
                     <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
                     <p5><?php echo "$teacher->R_status"; ?></p5><br>
-
                     <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">อนุมัติ</a>
 
 
@@ -101,10 +100,10 @@ session_start();
                               <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3" name="AP_note" require></textarea>
                             </div>
                             <!-- ส่งค่าแต่น่าจะส่งผิดน้องยังไม่เข้าเดี่ยวต้องไปเช็คเรื่อง value -->
-                            <p5><?php echo "$teacher->R_id $userid "; ?></p5><br>
+                            
                             <input  type="hidden"  name="AP_approve" value="ไม่อนุมัติ"/>
-                            <input  type="hidden"  name="A_id" value=<?php echo "$teacher->R_id"; ?>/>
-                            <input  type="hidden"  name="R_id" value=<?php echo "$userid"; ?>/>
+                            <input  type="hidden"  name="A_id" value=<?php echo "$userid"; ?>/>
+                            <input  type="hidden"  name="R_id" value=<?php echo "$R"; ?>/>
                             <input  type="hidden"  name="AP_date" value="2022-03-24"/>
                            
                             <input type="hidden" name="controller" value="teacher"/>
