@@ -173,7 +173,7 @@ session_start();
               <?php if ($NotApprove->AP_approve == "ไม่อนุมัติ" && $NotApprove->R_status == "พิจารณาแล้ว") { ?>
                 
                 <div class="column">
-                  <div class="box">
+                  <div class="box" >
                       <div class="row row-cols-3">
 
                           <div class="col">
@@ -182,8 +182,8 @@ session_start();
                             <p5><?php echo "รูปแบบคำร้อง: $NotApprove->R_type"; ?></p5><br>
                             <p5><?php echo "by"; ?></p5>
                             <p5 class="text-danger"><?php echo "$NotApprove->S_fname $NotApprove->S_lname $NotApprove->S_id"; ?></p5><br>
-                            <p4><?php echo "$NotApprove->R_status"; ?></p4><br>
-                            
+                            <p4><?php echo "$NotApprove->R_status"; ?></p4>
+                        
                           </div>
 
                           <div class="col"><center>
@@ -195,8 +195,7 @@ session_start();
                           </div>
 
                           <div class="col"><br><br>
-                          <center><h2 class="text-danger"><?php echo "$NotApprove->AP_approve"; ?></h2>
-                          <p5><?php echo "เหตุผล : $NotApprove->AP_note"; ?></p5><br>
+                          <center><h2 class="text-danger"><?php echo "$NotApprove->AP_approve"; ?></h2>                        
                           </center>
                           </div>
 
