@@ -35,7 +35,7 @@ if (!$_SESSION['userid']) {
             <?php echo $userid ?>
 
             <?php foreach ($studentRequestList as $studentRequest) { ?>
-                <?php if ($studentRequest->S_id ==  $userid && $studentRequest->AP_date !=  NULL ) { ?>
+                <?php if ($studentRequest->S_id ==  $userid ) { ?>
                     <div class="column">
                         <div class="box">
 

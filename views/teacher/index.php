@@ -14,7 +14,15 @@ session_start();
 
 <head>
   <meta charset="UTF-8">*
+
   <link rel="stylesheet" href="views/teacher/styleteacher.css">
+
+  <script>
+    function debugBase64(base64URL){
+      var win = window.open();
+      win.document.write('<iframe src="' + base64URL  + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>');
+    }
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
@@ -180,8 +188,9 @@ session_start();
 
                           <div class="col"><center>
                             <img src="img/file.png" height="100" width="105" ><br>
-                            <p5><?php echo "ไฟล์.pdf ดึงจาก doc_request เจ้เกด เจ้ผึ้ง"; ?></p5><br>
-                            <p5><?php echo "$NotApprove->DR_path"; ?></p5>
+                            
+                            <?php echo '<a  href="data:application/pdf;base64,'.base64_encode($NotApprove->DR_path).' " onclick="debugBase64(this.href)"/>ดาวน์โหลดเอกสาร</a>';?></p5>
+
                           </center>
                           </div>
 
