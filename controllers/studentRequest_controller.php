@@ -2,7 +2,7 @@
 {
     public function index(){
          $studentRequestList=studentRequest::getAll();
-        echo "haha";
+
         require_once('views/studentRequest/index.php');
     }
    
@@ -26,9 +26,8 @@
    public function newRequest()
    {
     $id=$_GET['S_id'];
-    echo $id;
+  
     $OrganizationList = Organization::getAll();
-    $ColaborList = Colabor::getAll();
     $studentRequest  = Student::get2($id);
        require_once('./views/studentRequest/addrequest.php');
        
