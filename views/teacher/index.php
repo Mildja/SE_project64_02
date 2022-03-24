@@ -196,6 +196,7 @@ session_start();
 
                           <div class="col"><br><br>
                           <center><h2 class="text-danger"><?php echo "$NotApprove->AP_approve"; ?></h2></center>
+                          <p5><?php echo "$NotApprove->AP_note"; ?></p5><br>
                           </div>
 
                       </div>
