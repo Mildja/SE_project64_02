@@ -70,6 +70,10 @@ if (!$_SESSION['userid']) {
                   <div class="column">
                     <div class="box">
 
+                    <div class="row row-cols-3">
+
+                        <div class="col">
+
                       <h2 ><?php echo "$teacher->O_name"; ?></h2>
                       <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
                       <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
@@ -137,19 +141,25 @@ if (!$_SESSION['userid']) {
                         </div>
                         <!-- จบ Modal -->
 
-                      </form>
+                      </form></div>
                       <br><br>
                       <div class="col">
                           <center>
                             <img src="img/file.png" height="100" width="105"><br>
 
                             <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($NotApprove->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
-                            <a class="btn btn-success" href=?controller=teacher&action=detail&<?php echo "R_id=$NotApprove->R_id";?>>รายละเอียด</a>
 
                           </center>
                         </div>
-                        
 
+                        <div class="col"><br><br><br><br><br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  
+                        &lt; &lt; 
+                            <a align = 'left' href=?controller=studentRequest&action=detailRequest&<?php echo "R_id=$teacher->R_id";?>>รายละเอียดเพิ่มเติม</a>
+                            &gt; &gt; 
+                        </div>
+                        
+                    </div>
                     </div>
                   </div>
                 <?php } ?>
@@ -216,6 +226,7 @@ if (!$_SESSION['userid']) {
                           <p5><?php echo "รูปแบบคำร้อง: $NotApprove->R_type"; ?></p5><br>
                           <p5><?php echo "by"; ?></p5>
                           <p5 class="text-danger"><?php echo "$NotApprove->S_fname $NotApprove->S_lname $NotApprove->S_id"; ?></p5><br>
+                          <p5><?php echo "ไม่อนุมัติ เพราะ $NotApprove->AP_note"; ?></p5><br>
                           
 
                         </div>
