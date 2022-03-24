@@ -16,7 +16,7 @@
         <div class="column">
             <div class="box2">
                 <form method="POST" action="?controller=studentRequest&action=addRequest" enctype="multipart/form-data">
-                    <select class="form-select" name="R_type" aria-label="Default select example">
+                    <select class="form-select" name="R_type" aria-label="Default select example" >
                         <option selected>เลือก</option>
                         <option value="ฝึกงาน">ฝึกงาน</option>
                         <option value="สหกิจ">สหกิจ</option>
@@ -181,8 +181,27 @@
             </div>
 
 
-
         </div>
+
+        <script>
+
+            $(function(){
+
+            $('form').submit(function(){
+
+                if ($(':text[value=""]').size() > 0){
+
+                    alert('กอรกข้อมูลไม่ครบ โปรดตรวจสอบข้อมูลอีกครั้ง'); return false;
+
+                }
+
+                    return true;
+
+            });
+
+        });
+
+</script> 
 
 
     </center>
