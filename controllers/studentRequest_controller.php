@@ -23,7 +23,7 @@
 
    public function newRequest()
    {
-       
+    $OrganizationList = Organization::getAll();
        require_once('./views/studentRequest/addrequest.php');
        
    }
