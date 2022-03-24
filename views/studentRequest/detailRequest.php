@@ -17,25 +17,27 @@
                
                     <div class="column">
                         <div class="box1">
-
-                 
-                            <p5><?php echo "$studentRequest->R_type"; ?></p5><br/>
+                            <center>
+                            <br><h2><b><?php echo "รายละเอียดใบคำร้อง"; ?></b></h2><br><br>
+                            </center>
+                            <p5><?php echo "รูปแบบคำร้อง: $studentRequest->R_type"; ?></p5><br>
                             <p5><?php echo "ชื่อ $studentRequest->S_fname"; ?></p5>
-                            <p5><?php echo "  $studentRequest->S_lname"; ?></p5><br/><br/>
+                            <p5><?php echo " นามสกุล  $studentRequest->S_lname"; ?></p5><br/><br>
+                            <p5><?php echo "รหัสนิสิต  $studentRequest->S_id"; ?></p5>
                            
-                            <p5><?php echo "ตำแหน่ง : $studentRequest->R_position"; ?></p5><br/>
+                            <p5><?php echo "ยื่นฝึกงานตำแหน่ง: $studentRequest->R_position"; ?></p5><br>
                            
-                            <p5><?php echo "วันเริ่มฝึกงาน : $studentRequest->R_sdate"; ?></p5><br/>
+                            <p5><?php echo "วันเริ่มฝึกงาน : $studentRequest->R_sdate"; ?></p5><br>
                             
-                            <p5><?php echo "วันสิ้นสุดฝึกงาน : $studentRequest->R_fdate"; ?></p5><br/><br/>
+                            <p5><?php echo "วันสิ้นสุดฝึกงาน : $studentRequest->R_fdate"; ?></p5><br><br>
                             
-                            <p5><?php echo "ข้อมูลสถานประกอบการ"; ?></p5><br/>
-                            <p5><?php echo "$studentRequest->O_name"; ?></p5><br/>
-                            <p5><?php echo "ที่อยู่ : $studentRequest->O_addr"; ?></p5><br/>
+                            <p5><?php echo "ข้อมูลสถานประกอบการ"; ?></p5><br>
+                            <p5><?php echo "$studentRequest->O_name"; ?></p5><br>
+                            <p5><?php echo "ที่อยู่ : $studentRequest->O_addr"; ?></p5><br>
                             <p5><?php echo "ชื่อ$studentRequest->C_fname"; ?></p5>
-                            <p5><?php echo "  $studentRequest->C_lname"; ?></p5><br/>
-                            <p5><?php echo "Email : $studentRequest->C_email"; ?></p5><br/>
-                            <p5><?php echo "เบอร์ติดต่อ : $studentRequest->C_tel"; ?></p5><br/><br/><br/>
+                            <p5><?php echo "  $studentRequest->C_lname"; ?></p5><br>
+                            <p5><?php echo "Email : $studentRequest->C_email"; ?></p5><br>
+                            <p5><?php echo "เบอร์ติดต่อ : $studentRequest->C_tel"; ?></p5><br><br><br>
                             
                             <p5><?php echo "ข้อมูลสถานการออกหนังสืออนุเคราะห์"; ?></p5><br/>
                             <p5><?php echo "ชื่อ $studentRequest->D_fname"; ?></p5>
@@ -51,12 +53,20 @@
 
                             
                              } ?>
-                          <br/>
+                          <br>
+                          <br><br>
+                           
+                            <img src="img/file.png" height="100" width="105">
+                            <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($studentRequest->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
+                            
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="img/file.png" height="100" width="105">
+                            <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($studentRequest->DS_path) . ' " onclick="debugBase64(this.href)"/>เอกสารส่งตัว</a>'; ?></p5>
 
-                            <?php echo '<a class="btn btn-primary btn-xs" href="data:application/pdf;base64,'.base64_encode($studentRequest->DR_path).' " onclick="debugBase64(this.href)"/>ดาวน์โหลด</a>';?>
-             
+                           <br><br>
+          
                             <a type="button" href="?controller=studentRequest&action=index" class="btn btn-success">ย้อนกลับ</a>
-                     
+                        
                         </div>
                         
 

@@ -28,13 +28,6 @@
         require_once('views/teacher/index.php');
     }
 
-    public function detail()
-    {
-        $id=$_GET['R_id'];
-        $teacher_list = teacher::get($id); 
-        require_once('./views/teacher/detail.php');
-        
-    }
    
    
 }?>

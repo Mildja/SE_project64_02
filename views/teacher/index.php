@@ -222,7 +222,6 @@ if (!$_SESSION['userid']) {
                             <img src="img/file.png" height="100" width="105"><br>
 
                             <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($NotApprove->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
-                            <a class="btn btn-success" href=?controller=teacher&action=detail&<?php echo "R_id=$NotApprove->R_id";?>>รายละเอียด</a>
 
                           </center>
                         </div>
@@ -230,6 +229,7 @@ if (!$_SESSION['userid']) {
                         <div class="col"><br><br>
                           <center>
                             <h2 class="text-danger"><?php echo "$NotApprove->AP_approve"; ?></h2>
+                            <a href=?controller=studentRequest&action=detailRequest&<?php echo "R_id=$NotApprove->R_id";?>>รายละเอียด</a>
                           </center>
                         </div>
 
