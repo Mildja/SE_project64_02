@@ -44,30 +44,20 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><img
-                    src ="./img/logo.php me-2"></img> </div>
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
+                    class="fas fa-user-secret me-2"></i>Menu</div>
+
             <div class="list-group list-group-flush my-3">
+
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                        class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                        class="fas fa-tachometer-alt me-2"></i>Profile</a>
 
                 <a href="?controller=studentRequest&action=index" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-project-diagram me-2"></i>คำร้องฝึกงาน</a>
+                        class="fas fa-project-diagram me-2"></i>Internship Request</a>
 
 
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-chart-line me-2"></i>Analytics</a>
-
-
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-paperclip me-2"></i>Reports</a>
-
-
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-shopping-cart me-2"></i>Store Mng</a>
-
-
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-gift me-2"></i>Products</a>
+                        class="fas fa-chart-line me-2"></i>Documents</a>
 
 
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
@@ -75,10 +65,20 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
 
 
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-map-marker-alt me-2"></i>Outlet</a>
+                        class="fas fa-map-marker-alt me-2"></i>Settings</a>
                         
                 <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
+
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"></a>
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"></a>
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"></a>
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"></a>
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"></a>   
+                
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"></a>
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"></a>
+                <a href="logout.php" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"></a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -102,18 +102,9 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         
                         <li class="nav-item dropdown">
-                           
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                <i class="fas fa-user me-2" > <?php echo $_SESSION['user']; ?></i>
-                           
-                           
-                            
+                             <i class="fas fa-user me-2" > <?php echo $_SESSION['user']; ?></i>
+
                         </li>
                     </ul>
                     
