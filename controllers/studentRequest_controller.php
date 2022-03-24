@@ -14,10 +14,10 @@
  
        
        $id=$_GET['R_id'];
-       echo $id;
+ 
        $studentRequest  = studentRequest::get($id); 
        
-       echo $studentRequest->R_id;
+       
       
        require_once('./views/studentRequest/detailRequest.php');
        
@@ -25,9 +25,10 @@
 
    public function newRequest()
    {
-    $id=$_GET['R_id'];
+    $id=$_GET['S_id'];
+    echo $id;
     $OrganizationList = Organization::getAll();
-    $studentRequest  = studentRequest::get($id);
+    $studentRequest  = Student::get2($id);
        require_once('./views/studentRequest/addrequest.php');
        
    }
@@ -99,6 +100,7 @@
         $list5=studentRequest::get2($R_type,$R_position,$R_cost,$R_room,$R_sdate, $R_fdate,$S_id,$C_id,$D_id);
         $R_id=$list5->R_id;
         $date1 =date("Y-m-d");
+    
         Doc_Request::Add($DR_path,$R_id,$date1);
        //Student::Add($S_fname,$S_lname);
      

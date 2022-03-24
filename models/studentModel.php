@@ -192,33 +192,33 @@ class studentRequest
         $D_lname = $my_row["D_lname"];
         $D_position = $my_row["D_position"];
         $DR_path = $my_row["DR_path"];
-        $AP_approve = $my_row["AP_approve"];
+        $AP_approve = $my_row["AP_approve"];   
            
         
         require("connection_close.php");
         return new studentRequest(      
             $S_id,
-            $R_id,
-            $O_id,
-            $O_name,
-            $AP_date,
-            $R_status,
-            $R_type,
-            $S_fname,
-            $S_lname,
-            $R_position,
-            $R_sdate,
-            $R_fdate,
-            $O_addr,
-            $C_fname,
-            $C_lname,
-            $C_email,
-            $C_tel,
-            $D_fname,
-            $D_lname,
-            $D_position,
-            $DR_path,
-            $AP_approve);
+        $R_id,
+        $O_id,
+        $O_name,
+        $AP_date,
+        $R_status,
+        $R_type,
+        $S_fname,
+        $S_lname,
+        $R_position,
+        $R_sdate,
+        $R_fdate,
+        $O_addr,
+        $C_fname,
+        $C_lname,
+        $C_email,
+        $C_tel,
+        $D_fname,
+        $D_lname,
+        $D_position,
+        $DR_path,
+        $AP_approve);
 
     }
     public static function get2($R_type,$R_position,$R_cost,$R_room,$R_sdate, $R_fdate,$S_id,$C_id,$D_id)

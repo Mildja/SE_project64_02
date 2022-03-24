@@ -79,7 +79,28 @@ class Student
         require("connection_close.php");
         return new Student($S_id,$S_pass,$S_fname,$S_lname,$S_year);
     }
+    public static function get2($id)
+    {
+        
+        require("connect_connection.php");
+        $sql="SELECT * FROM Student WHERE S_id = '$id'  ";
+        $result=$conn->query($sql);
+        $my_row=$result->fetch_assoc();
+        
+        
+        $S_id= $my_row['S_id'];
 
+        $S_pass = $my_row['S_pass'];
+
+        $S_fname = $my_row['S_fname'];
+
+        $S_lname = $my_row['S_lname'];
+
+        $S_year = $my_row['S_year'];
+        
+        require("connection_close.php");
+        return new Student($S_id,$S_pass,$S_fname,$S_lname,$S_year);
+    }
 
 
 
