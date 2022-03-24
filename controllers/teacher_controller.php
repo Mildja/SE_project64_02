@@ -27,5 +27,13 @@
         teacher::updateRequest($R_id,$R_status);
         teacherController::index();
     }
+    public function detailRequest()
+   {
+       
+       $id=$_GET['R_id'];
+       $Request_list  = teacher::get($id);  
+       require_once('views/teacher/index.php');
+       
+   }
    
 }?>
