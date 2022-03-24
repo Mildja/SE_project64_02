@@ -11,10 +11,12 @@
 
    public function detailRequest()
    {
+ 
        
        $id=$_GET['R_id'];
        echo $id;
-       $studentRequest  = studentRequest::get($id);
+       $studentRequest  = studentRequest::get($id); 
+       
        echo $studentRequest->R_id;
       
        require_once('./views/studentRequest/detailRequest.php');
@@ -76,7 +78,7 @@
         $list1=Organization::get($O_name);
         $O_id=$list1->O_id;
        }
-       
+     
        Colabor::Add($C_fname,$C_lname,$C_email,$C_tel, $O_id);
        $list2=Colabor::get($C_fname,$C_lname,$C_email,$C_tel, $O_id);
        $C_id=$list2->C_id;
@@ -93,7 +95,7 @@
         $ReadBinary = fread($fp,filesize($_FILES["DR_path"]["tmp_name"]));
         fclose($fp);
         $DR_path = addslashes($ReadBinary);
-   
+  
         $list5=studentRequest::get2($R_type,$R_position,$R_cost,$R_room,$R_sdate, $R_fdate,$S_id,$C_id,$D_id);
         $R_id=$list5->R_id;
         $date1 =date("Y-m-d");
