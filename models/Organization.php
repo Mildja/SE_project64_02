@@ -76,6 +76,8 @@ class Organization
         require("connection_close.php");
         return new Organization($O_id,$O_name,$O_addr);
     }
+
+ 
 }
 
 ?>
