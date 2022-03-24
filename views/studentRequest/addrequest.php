@@ -30,8 +30,8 @@
                           <input name="S_fname" type="hidden" value="<?php echo "$studentRequest->S_fname";?>">
                         </div>
                         <div class="col">
-                        <p5 value="<?php echo $studentRequest->S_fname; ?>" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_fname"><?php echo $studentRequest->S_fname; ?></p5>
-                            <input type="text" class="form-control" placeholder="นามสกุล" aria-label="นามสกุล" name="S_lname">
+                        <p5 value="<?php echo $studentRequest->S_lname; ?>" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_lname"><?php echo $studentRequest->S_lname; ?></p5>
+                        <input name="S_lname" type="hidden" value="<?php echo "$studentRequest->S_lname";?>">
 
                         </div>
                     </div>
