@@ -15,17 +15,11 @@
     
 
         teacher::addAP_request($AP_date,$AP_approve,$AP_note,$A_id,$R_id);
-        
+        teacher::updateRequest($R_id);
         teacherController::index();
         
+
     }
-    public function updateRequest()
-    {   
-        $R_id = $_GET['R_id'];
-        $R_status= $_GET['R_status'];
-        teacher::updateRequest($R_id,$R_status);
-        teacherController::index();
-    }
-    
+   
    
 }?>
