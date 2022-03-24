@@ -31,7 +31,7 @@ class Student
 
         $StudentList = [];
 
-        require("connect_database.php");
+        require("connect_connection.php");
 
         $sql = "SELECT * FROM Student";
 

@@ -23,7 +23,7 @@ if (!$_SESSION['userid']) {
 
 
 
-
+        <a class="btn btn-success" href=?controller=studentRequest&action=newRequest&<?php echo "S_id=$userid";?>>AddRequest</a>
 
 
             <!-- <form method="get" action="" style=" right:200px;">
@@ -32,8 +32,7 @@ if (!$_SESSION['userid']) {
         <button type="submit" name="action" value="search"> Search </button>
         <button type="submit" name="action" value="index">Back</button></br>
     </form> -->
-            <?php echo $userid ?>
-
+       
             <?php foreach ($studentRequestList as $studentRequest) { ?>
                 <?php if ($studentRequest->S_id ==  $userid ) { ?>
                     <div class="column">
@@ -74,7 +73,7 @@ if (!$_SESSION['userid']) {
         </center>
 
         <!-- <center><a class="button" href="?controller=order&action=newOrder">Addnew</a></center> -->
-        <a class="btn btn-success" href=?controller=studentRequest&action=newRequest&<?php echo "S_id=$userid";?>>AddRequest</a>
+     
 
 
     </body>
