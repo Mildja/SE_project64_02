@@ -103,10 +103,12 @@ class teacher
         ,IF(Doc_Request.DR_id is NULL,'ไม่มีเอกสารคำร้องขอ',Doc_Request.DR_id) AS DR_id
         ,IF(Doc_Request.DR_date is NULL,'ไม่มีเอกสารคำร้องขอ',Doc_Request.DR_date) AS DR_date
         ,IF(Doc_Request.DR_path is NULL,'ไม่มีเอกสารคำร้องขอ',Doc_Request.DR_path) AS DR_path
+        
         ,IF(AP_Request.AP_id is NULL,'รอดำเนินการ',AP_Request.AP_id) AS AP_id
         ,IF(AP_Request.AP_date is NULL,'รอดำเนินการ',AP_Request.AP_date) AS AP_date
         ,IF(AP_Request.AP_approve is NULL,'รอดำเนินการ',AP_Request.AP_approve) AS AP_approve
         ,IF(AP_Request.AP_note is NULL,'ไม่มีบันทึก',AP_Request.AP_note) AS AP_note
+
         ,Admin.A_id,Admin.A_pass,Admin.A_fname,Admin.A_lname
         ,Admin.A_position
         ,IF(Doc_Sent.DS_id is NULL,'ยังไม่ได้อัพเอกสารขอความอนุเคราะห์',Doc_Sent.DS_id) AS DS_id
@@ -118,10 +120,11 @@ class teacher
                  LEFT JOIN Student ON Request.S_id=Student.S_id
                  LEFT JOIN Colabor ON Request.C_id=Colabor.C_id
                  LEFT JOIN Data_namedoc ON Request.D_id=Data_namedoc.D_id
-                 LEFT JOIN Organization ON Data_namedoc.O_id=Organization.O_id && Colabor.O_id=Organization.O_id
+                 LEFT JOIN Organization ON Data_namedoc.O_id=Organization.O_id && Colabor.O_id=Organization.O_id 
                  LEFT JOIN AP_Request ON AP_Request.R_id=Request.R_id
                  LEFT JOIN Admin ON Admin.A_id=AP_Request.A_id
                  LEFT JOIN Doc_Sent ON Doc_Sent.AP_id=AP_Request.AP_id";
+                 
         $result = $conn->query($sql);
         while ($row = $result->fetch_assoc()) {
             $R_id = $row["R_id"];
@@ -172,6 +175,8 @@ class teacher
         require("connection_close.php");
         return $teacherList;
     }
+
+
     public function addAP_request($AP_date,$AP_approve,$AP_note,$A_id,$R_id)
     {
         require("connect_connnection.php");
@@ -189,3 +194,4 @@ class teacher
         return "Update success $result rows";
     }
 }
+

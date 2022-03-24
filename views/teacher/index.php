@@ -129,20 +129,40 @@ session_start();
           <!--หน้า3ของปอ-->
           <div class="tab-pane fade" id="page3" role="tabpanel" aria-labelledby="page3-tab">
             <!--หน้า3-->
-
-            <?php foreach ($teacher_list as $teacher) { ?>
-                   
-              <?php if ($teacher->R_status == "ไม่อนุมัติ" ) { ?>
+            
+            <?php foreach ($teacher_list as $NotApprove) { ?>
+              <?php if ($NotApprove->AP_approve == "ไม่อนุมัติ" && $NotApprove->R_status == "พิจารณาแล้ว") { ?>
+                
                 <div class="column">
                   <div class="box">
+                   
+                      <div class="row row-cols-3">
 
-                    <h2><?php echo "$teacher->O_name"; ?></h2>
-                    <p5><?php echo "วันที่ส่งเอกสาร $teacher->R_sdate";?></p5><br>
-                    <p5><?php echo "$teacher->R_type"; ?></p5><br>
-                    <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
+                          <div class="col">
+                            <h2><?php echo $NotApprove->O_name; ?></h2>               
+                            <p5><?php  echo "วันที่ส่งเอกสาร $NotApprove->R_sdate";?></p5><br>
+                            <p5><?php echo "รูปแบบคำร้อง: $NotApprove->R_type"; ?></p5><br>
+                            <p5><?php echo "by"; ?></p5>
+                            <p5 class="text-danger"><?php echo "$NotApprove->S_fname $NotApprove->S_lname $NotApprove->S_id"; ?></p5><br>
+                            <p4><?php echo "$NotApprove->R_status"; ?></p4><br>
+                            
+                          </div>
 
+                          <div class="col"><center>
+                            <img src="img/file.png" height="100" width="105" ><br>
+                            <p5><?php echo "ไฟล์.pdf $NotApprove->DR_path"; ?></p5>
+                          </center>
+                          </div>
+
+                          <div class="col"><br><br>
+                          <center><h2 class="text-danger"><?php echo "$NotApprove->AP_approve"; ?></h2></center>
+                          </div>
+
+                      </div>
+                  
                   </div>
                 </div>
+
               <?php } ?>
             <?php } ?>
 

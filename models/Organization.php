@@ -24,27 +24,16 @@ class Organization
     public static function getAll()
 
     {
-    
-
+   
         $OrganizationList = [];
-
         require("connect_connection.php");
-
         $sql = "SELECT * FROM Organization";
-
         $result = $conn->query($sql);
-
         while ($my_row = $result->fetch_assoc()) {
-
             $O_id = $my_row['O_id'];
-
             $O_name = $my_row['O_name'];
-
             $O_addr = $my_row['O_addr'];
-
-
             $OrganizationList[] = new Organization($O_id,$O_name,$O_addr);
-
         }
 
         require("connection_close.php");
