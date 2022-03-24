@@ -57,11 +57,11 @@ class Organization
        return  ;
 
     }
-    public static function get($name)
+    public static function get($O_id)
     {
         
         require("connect_connection.php");
-        $sql="SELECT * FROM Organization WHERE O_name = '$name' ";
+        $sql="SELECT * FROM Organization WHERE O_id = '$O_id' ";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         
