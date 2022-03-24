@@ -23,7 +23,9 @@
 
    public function newRequest()
    {
+    $id=$_GET['R_id'];
     $OrganizationList = Organization::getAll();
+    $studentRequest  = studentRequest::get($id);
        require_once('./views/studentRequest/addrequest.php');
        
    }
@@ -39,7 +41,21 @@
        $R_room = $_POST['R_room'];
        $R_sdate = $_POST['R_sdate'];
        $R_fdate= $_POST['R_fdate'];
-       $O_name = $_POST['O_name'];
+
+
+       //$O_name = $_POST['O_name'];
+
+       $check= $_POST['O_name'];
+        if($check==="other")
+        {
+            $O_name = $_POST['O_name2'];
+
+            }
+            else
+            {
+                $O_name = $_POST['O_name'];
+ 
+            }
        $O_addr = $_POST['O_addr'];
        $C_fname = $_POST['C_fname'];
        $C_lname = $_POST['C_lname'];
@@ -49,15 +65,23 @@
        $D_lname = $_POST['D_lname'];
        $D_position = $_POST['D_position'];
 
-    
-       Organization::Add($O_name,$O_addr);
        $list1=Organization::get($O_name);
-       $O_id=$list1->O_id;
+       if($O_name===$list1->O_id)
+       {
+         $O_id=$list1->O_id;   
+       }
+       else{
+
+        Organization::Add($O_name,$O_addr);
+        $list1=Organization::get($O_name);
+        $O_id=$list1->O_id;
+       }
+       
        Colabor::Add($C_fname,$C_lname,$C_email,$C_tel, $O_id);
-       $list2=Colabor::get($C_fname);
+       $list2=Colabor::get($C_fname,$C_lname,$C_email,$C_tel, $O_id);
        $C_id=$list2->C_id;
        Data_namedoc::Add($D_fname,$D_lname,$D_position, $O_id);
-       $list3=Data_namedoc::get($D_fname);
+       $list3=Data_namedoc::get($D_fname,$D_lname,$D_position, $O_id);
        $D_id=$list3->D_id;
 
        $list4=Student::get($S_fname,$S_lname);
