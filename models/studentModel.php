@@ -5,8 +5,8 @@ class studentRequest
 {
 
     public $S_id, $R_id,
-        $O_id, $O_name, $AP_date, $R_status, $R_type, $S_fname, $S_lname,
-        $R_position, $R_sdate, $R_fdate, $O_addr, $C_fname, $C_lname, $C_email, $C_tel,
+        $O_id, $O_name, $AP_date,$AP_approve ,$R_status, $R_type, $S_fname, $S_lname,
+        $R_position,$R_sdate, $R_fdate, $O_addr, $C_fname, $C_lname, $C_email, $C_tel,
         $D_fname, $D_lname, $D_position, $DR_path;
 
 
@@ -32,7 +32,8 @@ class studentRequest
         $D_fname,
         $D_lname,
         $D_position,
-        $DR_path
+        $DR_path,
+        $AP_approve
     ) {
 
 
@@ -41,6 +42,7 @@ class studentRequest
         $this->O_id = $O_id;
         $this->O_name = $O_name;
         $this->AP_date = $AP_date;
+        $this->DR_path = $DR_path;
         $this->R_status = $R_status;
         $this->R_type = $R_type;
         $this->S_fname = $S_fname;
@@ -56,7 +58,9 @@ class studentRequest
         $this->D_fname = $D_fname;
         $this->D_lname = $D_lname;
         $this->D_position = $D_position;
-        $this->DR_path = $DR_path;
+        $this->AP_approve = $AP_approve;
+
+      
     }
 
 
@@ -69,7 +73,7 @@ class studentRequest
 
         require("connect_connection.php");
 
-        $sql = "SELECT Request.S_id,Request.R_id,Organization.O_id,Organization.O_name,AP_Request.AP_date,Request.R_status,Request.R_type,
+        $sql = "SELECT Request.S_id,Request.R_id,Organization.O_id,Organization.O_name,AP_Request.AP_date,AP_Request.AP_approve,Request.R_status,Request.R_type,
         Student.S_fname,Student.S_lname,  Request.R_position,Request.R_sdate,Request.R_fdate,Organization.O_addr,Colabor.C_fname,
         Colabor.C_lname,Colabor.C_email,Colabor.C_tel,
         Data_namedoc.D_fname,Data_namedoc.D_lname,
@@ -112,8 +116,8 @@ class studentRequest
             $D_lname = $my_row["D_lname"];
             $D_position = $my_row["D_position"];
             $DR_path = $my_row["DR_path"];
-
-
+            $AP_approve = $my_row["AP_approve"];
+            
             $studentRequestList[] = new studentRequest(
                 $S_id,
                 $R_id,
@@ -135,7 +139,8 @@ class studentRequest
                 $D_fname,
                 $D_lname,
                 $D_position,
-                $DR_path
+                $DR_path,
+                $AP_approve
             );
         }
 
@@ -148,7 +153,7 @@ class studentRequest
     {
         
         require("connect_connection.php");
-        $sql="SELECT Request.S_id,Request.R_id,Organization.O_id,Organization.O_name,AP_Request.AP_date,Request.R_status,Request.R_type,
+        $sql="SELECT Request.S_id,Request.R_id,Organization.O_id,Organization.O_name,AP_Request.AP_date,AP_Request.AP_approve,Request.R_status,Request.R_type,
         Student.S_fname,Student.S_lname,  Request.R_position,Request.R_sdate,Request.R_fdate,Organization.O_addr,Colabor.C_fname,
         Colabor.C_lname,Colabor.C_email,Colabor.C_tel,
         Data_namedoc.D_fname,Data_namedoc.D_lname,
@@ -211,6 +216,7 @@ class studentRequest
         $D_fname,
         $D_lname,
         $D_position,
+        $AP_approve,
         $DR_path);
 
     }
@@ -218,7 +224,7 @@ class studentRequest
     {
         
         require("connect_connection.php");
-        $sql="SELECT Request.S_id,Request.R_id,Organization.O_id,Organization.O_name,AP_Request.AP_date,Request.R_status,Request.R_type,
+        $sql="SELECT Request.S_id,Request.R_id,Organization.O_id,Organization.O_name,AP_Request.AP_date,AP_Request.AP_approve,Request.R_status,Request.R_type,
         Student.S_fname,Student.S_lname,  Request.R_position,Request.R_sdate,Request.R_fdate,Organization.O_addr,Colabor.C_fname,
         Colabor.C_lname,Colabor.C_email,Colabor.C_tel,
         Data_namedoc.D_fname,Data_namedoc.D_lname,
@@ -257,7 +263,7 @@ class studentRequest
         $D_lname = $my_row["D_lname"];
         $D_position = $my_row["D_position"];
         $DR_path = $my_row["DR_path"];
-           
+        $DR_path = $my_row["AP_approve"];   
         
         require("connection_close.php");
         return new studentRequest(      
@@ -281,6 +287,7 @@ class studentRequest
         $D_fname,
         $D_lname,
         $D_position,
+        $AP_approve,
         $DR_path);
 
     }
