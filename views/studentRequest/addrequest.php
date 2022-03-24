@@ -185,8 +185,9 @@
 
                     <br /><br />
 
-
+                    <a type="button" href="?controller=studentRequest&action=index" class="btn btn-success">ย้อนกลับ</a>
                     <button type="submit" class="btn btn-success" name="action" value="addRequest">Save</button>
+
                 </form>
 
             </div>
