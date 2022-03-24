@@ -59,6 +59,15 @@ session_start();
 
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             ...
+            <!--ค้นหารวม-->
+            <form method="GET" action="" class="container">
+                  <input class="textbox" type="text" name="key">
+                  <input class="textbox" type="hidden" name="controller" value="teacher"/>
+                  <button class="btn-submit" type="submit" name="action" value="search">Search</button>
+            </form>
+
+
+
           </div>
           <!--หน้า1-->
           <div class="tab-pane fade" id="page1" role="tabpanel" aria-labelledby="page1-tab">
