@@ -200,7 +200,7 @@ class teacher
     public static function search($key)
     {
         $searchAllList = [];
-        require("connection_connect.php");
+        require("connect_connection.php");
         $sql = "SELECT Student.S_id, Student.S_fname, Student.S_lname, Student.S_year, Organization.O_name, Request.R_type, Request.R_sdate, 
                        Request.R_status,AP_Request.AP_date,AP_Request.AP_approve,Colabor.C_fname
         FROM Student 
@@ -215,15 +215,18 @@ class teacher
         while($row = $result->fetch_assoc())
         {
             $R_type = $row["R_type"];
+            $R_sdate = $row["R_sdate"];
             $R_status  = $row["R_status"];
             $S_id  = $row["S_id"];
             $S_fname = $row["S_fname"];
             $S_lname = $row["S_lname"];
             $S_year = $row["S_year"];
             $O_name = $row["O_name"];
+            $AP_date  = $row["AP_date"];
             $AP_approve = $row["AP_approve"];
+            $C_fname  = $row["C_fname "];
 
-            $searchAllList[] = new teacher($S_id,$S_fname,$S_lname,$S_year,$O_name,$R_type,$R_status,$AP_approve);
+            $searchAllList[] = new teacher($S_id,$S_fname,$S_lname,$S_year,$O_name,$R_sdate,$R_type,$R_status,$AP_date,$AP_approve,$C_fname);
         }
         require("connection_close.php");
 
