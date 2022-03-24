@@ -122,8 +122,39 @@ session_start();
 
           <!--หน้า2ของเตย-->
           <div class="tab-pane fade" id="page2" role="tabpanel" aria-labelledby="page2-tab">
+          <!--หน้า2-->
+          <?php foreach ($teacher_list as $Approve) { ?>
+              <?php if ($Approve->AP_approve == "อนุมัติ" && $Approve->R_status == "พิจารณาแล้ว") { ?>
+                
+                <div class="column">
+                  <div class="box">
+                      <div class="row row-cols-3">
 
-            หน้า2
+                          <div class="col">
+                           คอลัม1
+                           <h2><?php echo $Approve->O_name; ?></h2>  
+                            
+                          </div>
+
+                          <div class="col"><center>
+                          คอลัม2
+                          </center>
+                          </div>
+
+                          <div class="col"><br><br><center>
+                          <!-- คอลัม3 -->
+                          <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">ทดสอบอัพไฟล์</a>
+
+                          </center>
+                          </div>
+
+                      </div>
+                  </div>
+                </div>
+                <?php } ?>
+            <?php } ?>
+
+
           </div>
 
           <!--หน้า3ของปอ-->
@@ -135,7 +166,6 @@ session_start();
                 
                 <div class="column">
                   <div class="box">
-                   
                       <div class="row row-cols-3">
 
                           <div class="col">
@@ -159,7 +189,6 @@ session_start();
                           </div>
 
                       </div>
-                  
                   </div>
                 </div>
 

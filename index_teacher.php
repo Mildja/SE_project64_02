@@ -36,7 +36,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="styles.css" />
     
-    <title>Bootstap 5 Responsive Admin Dashboard</title>
+    <title>Admin System</title>
 </head>
 
 <body>
@@ -45,7 +45,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    class="fas fa-user-secret me-2"></i>Codersbite</div>
+                    class="fas fa-user-secret me-2"></i>Menu</div>
             <div class="list-group list-group-flush my-3">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
@@ -88,7 +88,7 @@ if(isset($_GET['controller'])&&isset($_GET['action']))
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Dashboard</h2>
+                    <h2 class="fs-2 m-0">Apprenticeship system</h2>
                   
                 </div>
 
