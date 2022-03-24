@@ -23,10 +23,6 @@
             $_SESSION['user'] = $row['A_fname'] . " " . $row['A_lname'];
             $_SESSION['A_userlevel'] = $row['A_userlevel'];
 
-           
-
-
-
             if ($_SESSION['A_userlevel'] == 'a') {
                 header("Location: index_teacher.php");
             }
@@ -38,12 +34,7 @@
             $_SESSION['userid'] = $row['S_id'];
             $_SESSION['user'] = $row['S_fname'] . " " . $row['S_lname'];
             $_SESSION['s_userlevel'] = $row['s_userlevel'];
-
-           
-
-
-
-
+ 
             if ($_SESSION['s_userlevel'] == 's') {
                 header("Location: index_student.php");
             }
