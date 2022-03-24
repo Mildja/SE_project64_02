@@ -124,7 +124,7 @@ class teacher
                  LEFT JOIN AP_Request ON AP_Request.R_id=Request.R_id
                  LEFT JOIN Admin ON Admin.A_id=AP_Request.A_id
                  LEFT JOIN Doc_Sent ON Doc_Sent.AP_id=AP_Request.AP_id";
-                 
+
         $result = $conn->query($sql);
         while ($row = $result->fetch_assoc()) {
             $R_id = $row["R_id"];
@@ -193,5 +193,9 @@ class teacher
         require("connection_close.php");
         return "Update success $result rows";
     }
+
+    
+
+
 }
 

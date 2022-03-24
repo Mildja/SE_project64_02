@@ -180,7 +180,8 @@ session_start();
 
                           <div class="col"><center>
                             <img src="img/file.png" height="100" width="105" ><br>
-                            <p5><?php echo "ไฟล์.pdf $NotApprove->DR_path"; ?></p5>
+                            <p5><?php echo "ไฟล์.pdf ดึงจาก doc_request เจ้เกด เจ้ผึ้ง"; ?></p5><br>
+                            <p5><?php echo "$NotApprove->DR_path"; ?></p5>
                           </center>
                           </div>
 
