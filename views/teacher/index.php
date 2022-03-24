@@ -166,19 +166,16 @@ if (!$_SESSION['userid']) {
                       <div class="row row-cols-3">
 
                         <div class="col">
-                          คอลัม1
-                          <h2><?php echo $Approve->O_name; ?></h2>
-                          <h2><?php echo $NotApprove->O_name; ?></h2>
-                          <p5><?php echo "วันที่ยื่นคำร้อง $NotApprove->DR_date"; ?></p5><br>
-                          <p5><?php echo "รูปแบบคำร้อง: $NotApprove->R_type"; ?></p5><br>
-                          <p5><?php echo "by"; ?></p5>
-                          <p5 class="text-danger"><?php echo "$NotApprove->S_fname $NotApprove->S_lname $NotApprove->S_id"; ?></p5><br>
-
-                        </div>
+                         <!-- คอลัม1 -->
+                          <h2><?php echo "$teacher->O_name"; ?></h2>
+                          <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
+                          <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
+                          <p5><?php echo "$teacher->R_status"; ?></p5><br>
+                          </div>
 
                         <div class="col">
                           <center>
-                            คอลัม2
+                           <!-- คอลัม2 -->
                           </center>
                         </div>
 
