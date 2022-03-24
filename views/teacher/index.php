@@ -79,9 +79,9 @@ if (!$_SESSION['userid']) {
 
                       <form method="get" action="">
                         <input type="hidden" name="R_id" id="R_id" value="<?php echo $teacher->R_id; ?>" />
-                        
+                        <input type="hidden" name="AP_approve" id="AP_approve" value="ไม่อนุมัติ"/>
                         <!-- อนุมัติ -->
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ok" onclick="myFunction(<?php echo $teacher->R_id; ?>)">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ok" onclick="myFunction(<?php echo $teacher->R_id;?>,อนุมัติ)">
                           อนุมัติ
                         </button>
 
@@ -90,11 +90,7 @@ if (!$_SESSION['userid']) {
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-body">
-                                อนุมิติสำเร็จ
-                                <input type="hidden" name="AP_note" value="" />
-                                <input type="hidden" name="AP_approve" value="อนุมัติ" />
-                                <input type="hidden" name="A_id" value="<?php echo $userid; ?>" />
-                                 <input type="hidden" name="controller" value="teacher" />
+                              <p5><?php echo "อนุมัติคำร้องขอสำเร็จ"; ?></p5><br>
                                 <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
                               </div>
                             </div>
@@ -102,14 +98,16 @@ if (!$_SESSION['userid']) {
                         </div>
                         
                         <!-- ไม่อนุมัติ-->
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addModal" onclick="myFunction(<?php echo $teacher->R_id; ?>)">
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addModal" onclick="myFunction(<?php echo $teacher->R_id; ?>,ไม่อนุมัติ)">
                           ไม่อนุมัติ
                         </button>
 
                         <script>
-                          function myFunction(test) {
+                          function myFunction(test,status) {
                             document.getElementById("R_id").value = test;
+                            document.getElementById("AP_approve").value = status;
                           }
+                          
                         </script>
                         <!-- Modal คือการคลิกให้เด้ง pop up ขึ้นมานะเพื่อน-->
                         <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
@@ -129,7 +127,7 @@ if (!$_SESSION['userid']) {
                                 </div>
                                 <!-- ส่งค่าแต่น่าจะส่งผิดน้องยังไม่เข้าเดี่ยวต้องไปเช็คเรื่อง value -->
 
-                                <input type="hidden" name="AP_approve" value="ไม่อนุมัติ" />
+                                <!--<input type="hidden" name="AP_approve" value="ไม่อนุมัติ" />-->
                                 <input type="hidden" name="A_id" value="<?php echo $userid; ?>" />
                                 <input type="hidden" name="controller" value="teacher" />
                                 <button type="submit" class="btn btn-secondary" name="action" value="index" data-bs-dismiss="modal">Close</button>
