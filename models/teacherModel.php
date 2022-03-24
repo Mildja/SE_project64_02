@@ -179,7 +179,9 @@ class teacher
 
     public function addAP_request($AP_date,$AP_approve,$AP_note,$A_id,$R_id)
     {
-        require("connect_connnection.php");
+        echo"เข้าโมเดล add";
+        require("connect_connection.php");
+        
         $sql = "INSERT INTO `AP_Request`(`AP_id`,`AP_date`,`AP_approve`,`AP_note`,`A_id`,`R_id`) VALUES (NULL,'$AP_date','$AP_approve','$AP_note','$A_id','$R_id')";
         $result = $conn->query($sql);
         require("connection_close.php");
@@ -187,7 +189,7 @@ class teacher
     }
 
     public static function updateRequest($R_id,$R_status){
-        require("connection_connect.php");
+        require("connect_connection.php");
         $sql="UPDATE Request SET R_status='$R_status'WHERE R_id='$R_id'";
         $result = $conn->query($sql);
         require("connection_close.php");
