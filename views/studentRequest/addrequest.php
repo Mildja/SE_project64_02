@@ -30,12 +30,8 @@
 
                           <input name="S_fname" type="hidden" value="<?php echo "$studentRequest->S_fname";?>" required = "กอรกข้อมูลไม่ครบ โปรดตรวจสอบข้อมูลอีกครั้ง">
                         </div>
-                        <div class="col">
-                        <p5 value="<?php echo $studentRequest->S_lname; ?>" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_lname"><?php echo $studentRequest->S_lname; ?></p5>
-                        <input name="S_lname" type="hidden" value="<?php echo "$studentRequest->S_lname";?>" required = "กอรกข้อมูลไม่ครบ โปรดตรวจสอบข้อมูลอีกครั้ง">
-
-                          <input name="S_fname" type="hidden" value="<?php echo "$studentRequest->S_fname";?>" >
-                        </div>
+                    
+                       
                         <div class="col">
                         <p5 value="<?php echo $studentRequest->S_lname; ?>" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_lname"><?php echo $studentRequest->S_lname; ?></p5>
                         <input name="S_lname" type="hidden" value="<?php echo "$studentRequest->S_lname";?>" >
