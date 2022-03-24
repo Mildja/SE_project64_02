@@ -41,8 +41,7 @@ class studentRequest
         $this->R_id = $R_id;
         $this->O_id = $O_id;
         $this->O_name = $O_name;
-        $this->AP_date = $AP_date;
-        $this->DR_path = $DR_path;
+        $this->AP_date = $AP_date;       
         $this->R_status = $R_status;
         $this->R_type = $R_type;
         $this->S_fname = $S_fname;
@@ -58,6 +57,7 @@ class studentRequest
         $this->D_fname = $D_fname;
         $this->D_lname = $D_lname;
         $this->D_position = $D_position;
+        $this->DR_path = $DR_path;
         $this->AP_approve = $AP_approve;
 
       
@@ -192,32 +192,33 @@ class studentRequest
         $D_lname = $my_row["D_lname"];
         $D_position = $my_row["D_position"];
         $DR_path = $my_row["DR_path"];
+        $AP_approve = $my_row["AP_approve"];
            
         
         require("connection_close.php");
         return new studentRequest(      
-        $S_id,
-        $R_id,
-        $O_id,
-        $O_name,
-        $AP_date,
-        $R_status,
-        $R_type,
-        $S_fname,
-        $S_lname,
-        $R_position,
-        $R_sdate,
-        $R_fdate,
-        $O_addr,
-        $C_fname,
-        $C_lname,
-        $C_email,
-        $C_tel,
-        $D_fname,
-        $D_lname,
-        $D_position,
-        $AP_approve,
-        $DR_path);
+            $S_id,
+            $R_id,
+            $O_id,
+            $O_name,
+            $AP_date,
+            $R_status,
+            $R_type,
+            $S_fname,
+            $S_lname,
+            $R_position,
+            $R_sdate,
+            $R_fdate,
+            $O_addr,
+            $C_fname,
+            $C_lname,
+            $C_email,
+            $C_tel,
+            $D_fname,
+            $D_lname,
+            $D_position,
+            $DR_path,
+            $AP_approve);
 
     }
     public static function get2($R_type,$R_position,$R_cost,$R_room,$R_sdate, $R_fdate,$S_id,$C_id,$D_id)
@@ -263,32 +264,33 @@ class studentRequest
         $D_lname = $my_row["D_lname"];
         $D_position = $my_row["D_position"];
         $DR_path = $my_row["DR_path"];
-        $DR_path = $my_row["AP_approve"];   
+        $AP_approve = $my_row["AP_approve"];   
         
         require("connection_close.php");
         return new studentRequest(      
-        $S_id,
-        $R_id,
-        $O_id,
-        $O_name,
-        $AP_date,
-        $R_status,
-        $R_type,
-        $S_fname,
-        $S_lname,
-        $R_position,
-        $R_sdate,
-        $R_fdate,
-        $O_addr,
-        $C_fname,
-        $C_lname,
-        $C_email,
-        $C_tel,
-        $D_fname,
-        $D_lname,
-        $D_position,
-        $AP_approve,
-        $DR_path);
+            $S_id,
+            $R_id,
+            $O_id,
+            $O_name,
+            $AP_date,
+            $R_status,
+            $R_type,
+            $S_fname,
+            $S_lname,
+            $R_position,
+            $R_sdate,
+            $R_fdate,
+            $O_addr,
+            $C_fname,
+            $C_lname,
+            $C_email,
+            $C_tel,
+            $D_fname,
+            $D_lname,
+            $D_position,
+            $DR_path,
+            $AP_approve
+        );
 
     }
     public static function Add($R_type,$R_position,$R_cost,$R_room,$R_sdate, $R_fdate,$S_id,$C_id,$D_id)
