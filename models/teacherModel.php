@@ -188,9 +188,9 @@ class teacher
         
     }
 
-    public static function updateRequest($R_id,$R_status){
+    public static function updateRequest($R_id){
         require("connect_connection.php");
-        $sql="UPDATE Request SET R_status='$R_status'WHERE R_id='$R_id'";
+        $sql="UPDATE Request SET R_status='พิจารณาแล้ว' WHERE R_id='$R_id'";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "Update success $result rows";
