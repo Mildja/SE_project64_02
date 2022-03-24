@@ -41,7 +41,17 @@
                             <p5><?php echo "ชื่อ $studentRequest->D_fname"; ?></p5>
                             <p5><?php echo "  $studentRequest->D_lname"; ?></p5><br/>
                             <p5><?php echo "ตำแหน่ง $studentRequest->D_position"; ?></p5><br/>
-                            <p5><?php echo "สถานะ $studentRequest->R_status"; ?></p5><br/><br/><br/>
+
+                            <?php if ($studentRequest->R_status ==  "พิจารณาแล้ว" ) { 
+                                   echo "สถานะ $studentRequest->AP_approve"; 
+                            }
+                            else {
+
+                              echo "สถานะ $studentRequest->R_status";
+
+                            
+                             } ?>
+                          <br/>
 
                             <?php echo '<a class="btn btn-primary btn-xs" href="data:application/pdf;base64,'.base64_encode($studentRequest->DR_path).' " onclick="debugBase64(this.href)"/>ดาวน์โหลด</a>';?>
              
