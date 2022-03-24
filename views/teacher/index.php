@@ -74,13 +74,11 @@ session_start();
                     <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
                     <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
                     <p5><?php echo "$teacher->R_status"; ?></p5><br>
-                    <p5><?php echo "$teacher->R_id"; ?></p5><br>
+                    <p5><?php echo "$teacher->R_id"; ?></p5>
                    
-                    <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">อนุมัติ</a>
-
-
-
+                    
                     <form method="get" action="">
+                    <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">อนุมัติ</a>
                     <input  type="hidden"  name="R_id" id="R_id" value="<?php echo $teacher->R_id;?>"/>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addModal" onclick="myFunction(<?php echo $teacher->R_id;?>)">
                       ไม่อนุมัติ
