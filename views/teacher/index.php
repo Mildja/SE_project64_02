@@ -173,23 +173,23 @@ session_start();
               <?php if ($NotApprove->AP_approve == "ไม่อนุมัติ" && $NotApprove->R_status == "พิจารณาแล้ว") { ?>
                 
                 <div class="column">
-                  <div class="box" >
-                      <div class="row row-cols-3">
+                  <div class="box">
+                      <div class="row row-cols-3"  >
 
-                          <div class="col">
+                          <div class="col" >
                             <h2><?php echo $NotApprove->O_name; ?></h2>               
                             <p5><?php  echo "วันที่ยื่นคำร้อง $NotApprove->DR_date";?></p5><br>
                             <p5><?php echo "รูปแบบคำร้อง: $NotApprove->R_type"; ?></p5><br>
                             <p5><?php echo "by"; ?></p5>
                             <p5 class="text-danger"><?php echo "$NotApprove->S_fname $NotApprove->S_lname $NotApprove->S_id"; ?></p5><br>
                             <p4><?php echo "$NotApprove->R_status"; ?></p4>
-                        
+
                           </div>
 
                           <div class="col"><center>
                             <img src="img/file.png" height="100" width="105" ><br>
                             
-                            <?php echo '<a  href="data:application/pdf;base64,'.base64_encode($NotApprove->DR_path).' " onclick="debugBase64(this.href)"/>ดาวน์โหลดเอกสาร</a>';?></p5>
+                            <?php echo '<a  href="data:application/pdf;base64,'.base64_encode($NotApprove->DR_path).' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>';?></p5>
 
                           </center>
                           </div>
