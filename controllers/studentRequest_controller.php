@@ -28,6 +28,7 @@
     $id=$_GET['S_id'];
     echo $id;
     $OrganizationList = Organization::getAll();
+    $ColaborList = Colabor::getAll();
     $studentRequest  = Student::get2($id);
        require_once('./views/studentRequest/addrequest.php');
        
@@ -79,6 +80,7 @@
         $list1=Organization::get($O_name);
         $O_id=$list1->O_id;
        }
+       
      
        Colabor::Add($C_fname,$C_lname,$C_email,$C_tel, $O_id);
        $list2=Colabor::get($C_fname,$C_lname,$C_email,$C_tel, $O_id);
