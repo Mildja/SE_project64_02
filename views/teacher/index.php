@@ -101,10 +101,11 @@ session_start();
                               <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3" name="AP_note" require></textarea>
                             </div>
                             <!-- ส่งค่าแต่น่าจะส่งผิดน้องยังไม่เข้าเดี่ยวต้องไปเช็คเรื่อง value -->
+                            <p5><?php echo "$teacher->R_id $userid "; ?></p5><br>
                             <input  type="hidden"  name="AP_approve" value="ไม่อนุมัติ"/>
-                            <input  type="hidden"  name="A_id" value="$teacher->A_id"/>
-                            <input  type="hidden"  name="R_id" value="$userid"/>
-                            <input  type="hidden"  name="AP_date" value="date("Y-m-d")"/>
+                            <input  type="hidden"  name="A_id" value=<?php echo "$teacher->R_id"; ?>/>
+                            <input  type="hidden"  name="R_id" value=<?php echo "$userid"; ?>/>
+                            <input  type="hidden"  name="AP_date" value="2022-03-24"/>
                            
                             <input type="hidden" name="controller" value="teacher"/>
                             <button type="submit" class="btn btn-secondary" name="action" value="index" data-bs-dismiss="modal">Close</button>

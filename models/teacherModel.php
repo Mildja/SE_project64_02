@@ -179,13 +179,13 @@ class teacher
 
     public function addAP_request($AP_date,$AP_approve,$AP_note,$A_id,$R_id)
     {
-        echo"เข้าโมเดล add";
-        require("connect_connection.php");
         
+        require("connect_connection.php");
         $sql = "INSERT INTO `AP_Request`(`AP_id`,`AP_date`,`AP_approve`,`AP_note`,`A_id`,`R_id`) VALUES (NULL,'$AP_date','$AP_approve','$AP_note','$A_id','$R_id')";
         $result = $conn->query($sql);
         require("connection_close.php");
         return "add success $result row";
+        
     }
 
     public static function updateRequest($R_id,$R_status){
