@@ -135,19 +135,6 @@
 
                     <label>ข้อมูลผู้ประสานงาน</label>
                     <br />
-
-
-
-
-
-
-
-
-
-
-
-
-
                     
                     <div class="row">
                         <div class="col">
