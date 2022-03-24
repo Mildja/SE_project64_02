@@ -35,7 +35,7 @@ if (!$_SESSION['userid']) {
       <div class="row align-items-start ">
         <div class='col-sm-20 m-auto'>
 
-          <?php echo $userid ?>
+          
 
           <!--start แถบหัว ไม่ต้องไปยุ่งไรกับน้อง-->
           <ul class="nav nav-tabs" id="myTab" role="tablist">
