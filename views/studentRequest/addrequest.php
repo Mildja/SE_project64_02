@@ -25,11 +25,12 @@
 
                     <br />
                     <div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_fname">
-
+                        <div class="col">             
+                          <p5 value="<?php echo $studentRequest->S_fname; ?>" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_fname"><?php echo $studentRequest->S_fname; ?></p5>        
+                          <input name="S_fname" type="hidden" value="<?php echo "$studentRequest->S_fname";?>">
                         </div>
                         <div class="col">
+                        <p5 value="<?php echo $studentRequest->S_fname; ?>" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_fname"><?php echo $studentRequest->S_fname; ?></p5>
                             <input type="text" class="form-control" placeholder="นามสกุล" aria-label="นามสกุล" name="S_lname">
 
                         </div>
@@ -76,19 +77,28 @@
                             }
                         }
                     </script>
-                    <label>ข้อมูลสถานประกอบการ</label>
+                    <!--<label>ข้อมูลสถานประกอบการ</label>
                     <div class="col-12">
                           <select  name="O_name" onchange="opendiv(this.value)">
                         <option value=""></option>
-                        <?php foreach ($OrganizationList as $a) {
-                                echo "<option value=$a->O_name> $a->O_name </option>";
-                            } ?>
+                      
                         <option value="other">อื่นๆ..โปรดระบุ</option>
                     </select><br />
                     <div id="myDiv" style="display:none;">
                         อื่นๆ..โปรดระบุ : <input type="text"  name="O_name">
 
-                    </div>
+                    </div>-->
+                    <div class="col-12" >
+                                <select name="O_name" onchange="opendiv(this.value)">
+                                <?php foreach($OrganizationList as $a) {echo "<option value = $a->O_id>
+                                $a->O_name</option>";}?>
+                                <option value="other">อื่นๆ</option>
+                                </select><br />
+                                <div id="myDiv" style="display:none">
+                                <div class="col-25" >โปรดระบุชื่อสถานที่</div>
+                                <div class="col-75"><input type="text" name="O_name2"  ></div>
+                        
+                              </div></div>
                       
                             
                  
