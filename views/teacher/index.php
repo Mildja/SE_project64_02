@@ -74,6 +74,12 @@ if (!$_SESSION['userid']) {
                       <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
                       <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
                       <p5><?php echo "$teacher->R_status"; ?></p5><br>
+                      
+                          <center>
+                            <img src="img/file.png" height="100" width="105">
+                            <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($NotApprove->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
+                          </center>
+                        
 
                       <form method="get" action="">
                         
@@ -210,7 +216,7 @@ if (!$_SESSION['userid']) {
                           <p5><?php echo "รูปแบบคำร้อง: $NotApprove->R_type"; ?></p5><br>
                           <p5><?php echo "by"; ?></p5>
                           <p5 class="text-danger"><?php echo "$NotApprove->S_fname $NotApprove->S_lname $NotApprove->S_id"; ?></p5><br>
-                          <p4><?php echo "$NotApprove->R_status"; ?></p4>
+                          
 
                         </div>
 
