@@ -132,7 +132,7 @@
 
 
                     <div class="col-12">
-                        <label for="C_tel" class="form-label">ที่อยู่</label>
+                        <label for="C_tel" class="form-label">Tel</label>
                         <input type="text" class="form-control" name="C_tel" required = "กอรกข้อมูลไม่ครบ โปรดตรวจสอบข้อมูลอีกครั้ง">
 
                     </div>
