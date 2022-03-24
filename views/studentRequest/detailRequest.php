@@ -44,6 +44,7 @@
                             <p5><?php echo "สถานะ $studentRequest->R_status"; ?></p5><br/><br/><br/>
 
                             <?php echo '<a class="btn btn-primary btn-xs" href="data:application/pdf;base64,'.base64_encode($studentRequest->DR_path).' " onclick="debugBase64(this.href)"/>ดาวน์โหลด</a>';?>
+                           <?php echo $studentRequest->DR_path; ?>
                             <a type="button" href="?controller=studentRequest&action=index" class="btn btn-success">ย้อนกลับ</a>
                      
                         </div>
