@@ -70,16 +70,10 @@ if (!$_SESSION['userid']) {
                   <div class="column">
                     <div class="box">
 
-                      <h2><?php echo "$teacher->O_name"; ?></h2>
+                      <h2 ><?php echo "$teacher->O_name"; ?></h2>
                       <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
                       <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
-                      <p5><?php echo "$teacher->R_status"; ?></p5><br>
                       
-                          <center>
-                            <img src="img/file.png" height="100" width="105">
-                            <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($NotApprove->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
-                          </center>
-                        
 
                       <form method="get" action="">
                         
@@ -145,7 +139,16 @@ if (!$_SESSION['userid']) {
 
                       </form>
                       <br><br>
+                      <div class="col">
+                          <center>
+                            <img src="img/file.png" height="100" width="105"><br>
 
+                            <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($NotApprove->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
+                            <a class="btn btn-success" href=?controller=teacher&action=detail&<?php echo "R_id=$NotApprove->R_id";?>>รายละเอียด</a>
+
+                          </center>
+                        </div>
+                        
 
                     </div>
                   </div>
