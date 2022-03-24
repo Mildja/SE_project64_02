@@ -27,6 +27,14 @@
         $teacher_list = teacher::search($key);
         require_once('views/teacher/index.php');
     }
+
+    public function detail()
+    {
+        $id=$_GET['R_id'];
+        $teacher  = teacher::get($id); 
+        require_once('./views/teacher/detail.php');
+        
+    }
    
    
 }?>
