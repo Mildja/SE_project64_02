@@ -168,19 +168,24 @@ if (!$_SESSION['userid']) {
                         <div class="col">
                           คอลัม1
                           <h2><?php echo $Approve->O_name; ?></h2>
+                          <p5><?php echo "วันที่อนุมัติ $Approve->AP_date"; ?></p5><br>
+                          <p5><?php echo "รูปแบบคำร้อง: $Approve->R_type"; ?></p5><br>
+                          <p5><?php echo "by"; ?></p5>
+                          <p5 class="text-danger"><?php echo "$Approve->S_fname $Approve->S_lname $Approve->S_id"; ?></p5><br>
+                          <p4><?php echo "$Approve->R_status"; ?></p4>
 
                         </div>
 
                         <div class="col">
                           <center>
-                            คอลัม2
+                            <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">ทดสอบอัพไฟล์</a>
                           </center>
                         </div>
 
                         <div class="col"><br><br>
                           <center>
-                            <!-- คอลัม3 -->
-                            <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">ทดสอบอัพไฟล์</a>
+                          <h2 class="text-safe"><?php echo "$Approve->AP_approve"; ?></h2>
+                           
 
                           </center>
                         </div>
