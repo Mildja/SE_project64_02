@@ -59,11 +59,11 @@ class Data_namedoc
         return $Data_namedocList;
     }
 
-    public static function get($name)
+    public static function get($D_fname,$D_lname,$D_position, $O_id)
     {
         
         require("connect_connection.php");
-        $sql="SELECT * FROM Data_namedoc WHERE D_fname = '$name' ";
+        $sql="SELECT * FROM Data_namedoc WHERE D_fname = '$D_fname' AND D_lname = '$D_lname'  AND D_position = '$D_position'  AND O_id = '$O_id'";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         

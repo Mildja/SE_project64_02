@@ -65,11 +65,11 @@ class Colabor
 
         return $ColaborList;
     }
-    public static function get($name)
+    public static function get($C_fname,$C_lname,$C_email,$C_tel, $O_id)
     {
         
         require("connect_connection.php");
-        $sql="SELECT * FROM Colabor WHERE C_fname = '$name' ";
+        $sql="SELECT * FROM Colabor WHERE C_fname = '$C_fname' AND  C_lname = '$C_lname' AND  C_tel = '$C_tel'   AND  O_id = '$O_id'";
         $result=$conn->query($sql);
         $my_row=$result->fetch_assoc();
         
@@ -89,6 +89,7 @@ class Colabor
         require("connection_close.php");
         return new Colabor($C_id,$C_fname,$C_lname,$C_email,$C_tel,$O_id);
     }
+    
     public static function Add($C_fname,$C_lname,$C_email,$C_tel,$O_id)
 
     { 
