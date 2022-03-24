@@ -42,7 +42,7 @@ class Doc_Request
 
     { 
        require("connect_connection.php");
-       $sql = "INSERT INTO `Doc_Request` (`DR_id`, `DR_date`, `DR_path`, `R_id`) VALUES (NULL, '$date1', '$DR_path', '$R_id')";
+       $sql = "INSERT INTO `Doc_Request` (`DR_id`, `DR_path`, `R_id`, `DR_date`) VALUES (NULL, '$date1', '$R_id', '$DR_path')";
        $result = $conn->query($sql);
        require("connection_close.php");
        return  ;
