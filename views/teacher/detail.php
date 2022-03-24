@@ -21,28 +21,39 @@
 
 
                             <p5><?php echo "$teacher->R_type"; ?></p5><br/>
-                            <p5><?php echo "ชื่อ $teacher->S_fname"; ?></p5>
-                            <p5><?php echo "  $teacher->S_lname"; ?></p5><br/><br/>
+                            <p5><?php echo "ชื่อ $studentRequest->S_fname"; ?></p5>
+                            <p5><?php echo "  $studentRequest->S_lname"; ?></p5><br/><br/>
                            
-                            <p5><?php echo "ตำแหน่ง : $teacher->R_position"; ?></p5><br/>
+                            <p5><?php echo "ตำแหน่ง : $studentRequest->R_position"; ?></p5><br/>
                            
-                            <p5><?php echo "วันเริ่มฝึกงาน : $teacher->R_sdate"; ?></p5><br/>
+                            <p5><?php echo "วันเริ่มฝึกงาน : $studentRequest->R_sdate"; ?></p5><br/>
                             
-                            <p5><?php echo "วันสิ้นสุดฝึกงาน : $teacher->R_fdate"; ?></p5><br/><br/>
+                            <p5><?php echo "วันสิ้นสุดฝึกงาน : $studentRequest->R_fdate"; ?></p5><br/><br/>
                             
                             <p5><?php echo "ข้อมูลสถานประกอบการ"; ?></p5><br/>
-                            <p5><?php echo "$teacher->O_name"; ?></p5><br/>
-                            <p5><?php echo "ที่อยู่ : $teacher->O_addr"; ?></p5><br/>
-                            <p5><?php echo "ชื่อ$teacher->C_fname"; ?></p5>
-                            <p5><?php echo "  $teacher->C_lname"; ?></p5><br/>
-                            <p5><?php echo "Email : $teacher->C_email"; ?></p5><br/>
-                            <p5><?php echo "เบอร์ติดต่อ : $teacher->C_tel"; ?></p5><br/><br/><br/>
+                            <p5><?php echo "$studentRequest->O_name"; ?></p5><br/>
+                            <p5><?php echo "ที่อยู่ : $studentRequest->O_addr"; ?></p5><br/>
+                            <p5><?php echo "ชื่อ$studentRequest->C_fname"; ?></p5>
+                            <p5><?php echo "  $studentRequest->C_lname"; ?></p5><br/>
+                            <p5><?php echo "Email : $studentRequest->C_email"; ?></p5><br/>
+                            <p5><?php echo "เบอร์ติดต่อ : $studentRequest->C_tel"; ?></p5><br/><br/><br/>
                             
                             <p5><?php echo "ข้อมูลสถานการออกหนังสืออนุเคราะห์"; ?></p5><br/>
-                            <p5><?php echo "ชื่อ $teacher->D_fname"; ?></p5>
-                            <p5><?php echo "  $teacher->D_lname"; ?></p5><br/>
-                            <p5><?php echo "ตำแหน่ง $teacher->D_position"; ?></p5><br/>
-                            <p5><?php echo "สถานะ $teacher->R_status"; ?></p5><br/><br/><br/>
+                            <p5><?php echo "ชื่อ $studentRequest->D_fname"; ?></p5>
+                            <p5><?php echo "  $studentRequest->D_lname"; ?></p5><br/>
+                            <p5><?php echo "ตำแหน่ง $studentRequest->D_position"; ?></p5><br/>
+
+                            <?php if ($studentRequest->R_status ==  "พิจารณาแล้ว" ) { 
+                                   echo "สถานะ $studentRequest->AP_approve"; 
+                            }
+                            else {
+
+                              echo "สถานะ $studentRequest->R_status";
+
+                            
+                             } ?>
+                          <br/>
+                        
 
                             <center>
                             <img src="img/file.png" height="100" width="105"><br>

@@ -20,6 +20,11 @@ function call($controller, $action)
 
         case "teacher":
             require_once("./models/teacherModel.php");
+            require_once("./models/Colabor.php");
+            require_once("./models/Data_namedoc.php");
+            require_once("./models/Organization.php");
+            require_once("./models/Student.php");
+            require_once("./models/Doc_Request.php");
             $controller = new teacherController();
             break;
 

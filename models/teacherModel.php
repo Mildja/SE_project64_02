@@ -240,14 +240,14 @@ class teacher
         require("connect_connection.php");
 
         $sql="SELECT Request.S_id,Request.R_id,Organization.O_id,Organization.O_name,AP_Request.AP_date,AP_Request.AP_approve,Request.R_status,Request.R_type,
-        Student.S_fname,Student.S_lname,  Request.R_position,Request.R_sdate,Request.R_fdate,Organization.O_addr,Colabor.C_fname,
+        Student.S_fname,Student.S_lname,  Request.R_position,Request.R_sdate,Request.R_fdate,Organization.O_addr,Colabor.C_fname,AP_Request.AP_note
         Colabor.C_lname,Colabor.C_email,Colabor.C_tel,Data_namedoc.D_fname,Data_namedoc.D_lname,Data_namedoc.D_position,Doc_Request.DR_path
         
-        FROM Request INNER JOIN AP_Request ON AP_Request.R_id = Request.R_id
-        LEFT JOIN Colabor ON Colabor.C_id = Request.C_id
-        LEFT JOIN Organization ON Colabor.O_id = Organization.O_id
-        LEFT JOIN Student ON Student.S_id =Request.S_id
-        LEFT JOIN Data_namedoc ON Data_namedoc.D_id = Request.D_id
+        FROM Request LEFT JOIN AP_Request ON AP_Request.R_id = Request.R_id
+        INNER JOIN Colabor ON Colabor.C_id = Request.C_id
+        INNER JOIN Organization ON Colabor.O_id = Organization.O_id
+        INNER JOIN Student ON Student.S_id =Request.S_id
+        INNER JOIN Data_namedoc ON Data_namedoc.D_id = Request.D_id
         LEFT JOIN Doc_Request ON Doc_Request.R_id = Request.R_id
         WHERE Request.R_id='$id'";
 
@@ -275,12 +275,15 @@ class teacher
         $D_lname = $my_row["D_lname"];
         $D_position = $my_row["D_position"];
         $DR_path = $my_row["DR_path"];
-        $AP_approve = $my_row["AP_approve"];   
+        $AP_approve = $my_row["AP_approve"];
+        $AP_note = $my_row["AP_note"]; 
            
         require("connection_close.php");
         
-        return new teacher($S_id, $R_id,$O_id,$O_name,$AP_date,$R_status, $R_type,$S_fname,$S_lname, $R_position, 
-        $R_sdate,$R_fdate,$O_addr,$C_fname,$C_lname,$C_email,$C_tel,$D_fname,$D_lname,$D_position,$DR_path,$AP_approve);
+        return new teacher($R_id, $R_type, $R_position, $R_sdate, $R_fdate, NULL, NULL, $R_status, $S_id, NULL
+        , NULL, NULL, $S_fname, $S_lname, NULL, $C_fname, $C_lname, $C_email, $C_tel, $O_id, $O_name, $O_addr, $D_fname
+        , $D_lname, $D_position,NULL, NULL, $DR_path, NULL, $AP_date, $AP_approve, $AP_note, NULL, NULL, NULL
+        , NULL, NULL,NULL, NULL, NULL);
 
     }
 }

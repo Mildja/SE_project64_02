@@ -31,7 +31,7 @@
     public function detail()
     {
         $id=$_GET['R_id'];
-        $teacher  = teacher::get($id); 
+        $teacher_list = teacher::get($id); 
         require_once('./views/teacher/detail.php');
         
     }
