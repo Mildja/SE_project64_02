@@ -25,20 +25,16 @@
 
                     <br />
                     <div class="row">
-                        <div class="col">
-                            <p5 value="<?php echo $studentRequest->S_fname; ?>" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_fname"><?php echo $studentRequest->S_fname; ?></p5>
-
-                            <input name="S_fname" type="hidden" value="<?php echo "$studentRequest->S_fname"; ?>" required="กอรกข้อมูลไม่ครบ โปรดตรวจสอบข้อมูลอีกครั้ง">
+                        <div class="col">             
+                          <p5 value="<?php echo $studentRequest->S_fname; ?>" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_fname" required="กอรกข้อมูลไม่ครบ โปรดตรวจสอบข้อมูลอีกครั้ง"><?php echo $studentRequest->S_fname; ?></p5>        
+                          <input name="S_fname" type="hidden" value="<?php echo "$studentRequest->S_fname";?>" >
                         </div>
+                        <div class="col">
+                        <p5 value="<?php echo $studentRequest->S_lname; ?>" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_lname" required="กอรกข้อมูลไม่ครบ โปรดตรวจสอบข้อมูลอีกครั้ง"><?php echo $studentRequest->S_lname; ?></p5>
+                        <input name="S_lname" type="hidden" value="<?php echo "$studentRequest->S_lname";?>" >
 
+                        </div>
                     </div>
-                    <div class="col">
-                        <p5 value="<?php echo $studentRequest->S_lname; ?>" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="S_lname"><?php echo $studentRequest->S_lname; ?></p5>
-                        <input name="S_lname" type="hidden" value="<?php echo "$studentRequest->S_lname"; ?>">
-
-
-                    </div>
-
 
                     <div class="col-12">
                         <label for="R_position" class="form-label">ตำแหน่ง</label>
@@ -88,7 +84,7 @@
                                 $a->O_name</option>";
                             } ?>
                             <option value="other">อื่นๆ</option>
-                        </select><br /><br />
+                        </select><br />
                         <div id="myDiv" style="display:none">
                         <div class="col-12">โปรดระบุชื่อสถานที่ &nbsp;&nbsp;<input type="text" name="O_name2"> </div>
 
@@ -135,7 +131,6 @@
 
                     <label>ข้อมูลผู้ประสานงาน</label>
                     <br />
-                    
                     <div class="row">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="ชื่อ" aria-label="ชื่อ" name="C_fname" required="กอรกข้อมูลไม่ครบ โปรดตรวจสอบข้อมูลอีกครั้ง">
