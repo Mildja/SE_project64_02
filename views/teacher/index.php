@@ -74,15 +74,23 @@ session_start();
                     <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
                     <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
                     <p5><?php echo "$teacher->R_status"; ?></p5><br>
+                    <p5><?php echo "$teacher->R_id"; ?></p5><br>
                    
                     <a href="#" class="btn btn-success" role="button" data-bs-toggle="button">อนุมัติ</a>
 
 
 
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addModal" <?php echo "R_id=$studentRequest->R_id";?>>
+                    <form method="get" action="">
+                    <input  type="hidden"  name="R_id" id="R_id" value="<?php echo $teacher->R_id;?>"/>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addModal" onclick="myFunction(<?php echo $teacher->R_id;?>)">
                       ไม่อนุมัติ
                     </button>
 
+                    <script>
+                            function myFunction(test) {
+                              document.getElementById("R_id").value = test;
+                            }
+                    </script>
                     <!-- Modal คือการคลิกให้เด้ง pop up ขึ้นมานะเพื่อน-->
                     <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered">
@@ -92,32 +100,30 @@ session_start();
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                          
-                          <form method="get" action="">
-                          <div class="modal-body">
                           
+                          <div class="modal-body" id="<?php echo $teacher->R_id;?>">
                             <!-- ช่องกรอกข้อความ byมายด์ -->
                             <div class="mb-3 text-dark">
                               <label for="exampleFormControlTextarea1" class="form-label">เหตุผลที่ไม่อนุมัติ</label>
                               <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3" name="AP_note" require></textarea>
                             </div>
                             <!-- ส่งค่าแต่น่าจะส่งผิดน้องยังไม่เข้าเดี่ยวต้องไปเช็คเรื่อง value -->
-                             <p5><?php echo "$Request_list->R_id"; ?></p5><br>
+                            
                             <input  type="hidden"  name="AP_approve" value="ไม่อนุมัติ"/>
-                            <input  type="hidden"  name="A_id" value=<?php echo "$userid"; ?>/>
-                            <input  type="hidden"  name="R_id" value=<?php echo "$R"; ?>/>
-                            <input  type="hidden"  name="AP_date" value="2022-03-24"/>
-                           
+                            <input  type="hidden"  name="A_id" value="<?php echo $userid;?>"/>
                             <input type="hidden" name="controller" value="teacher"/>
                             <button type="submit" class="btn btn-secondary" name="action" value="index" data-bs-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
                           </div>
-                          </form>
+                          
 
 
                         </div>
                       </div>
                     </div>
                     <!-- จบ Modal -->
+
+                    </form>
                     <br><br>
 
 
@@ -216,6 +222,7 @@ session_start();
     </div>
   </div>
 </body>
+
 <html>
 
 

@@ -195,9 +195,12 @@ class teacher
         require("connection_close.php");
         return "Update success $result rows";
     }
+<<<<<<< Updated upstream
     
   
 
+=======
+>>>>>>> Stashed changes
 
 }
 
