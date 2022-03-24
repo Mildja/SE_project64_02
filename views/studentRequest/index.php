@@ -42,8 +42,16 @@ if (!$_SESSION['userid']) {
                             <h2><?php echo "$studentRequest->O_name"; ?></h2>
                             <p5><?php echo "$studentRequest->R_type"; ?></p5><br/>
                             <p5><?php echo "$studentRequest->AP_date"; ?></p5><br/>
-                            <p5><?php echo "$studentRequest->R_status"; ?></p5><br/><br/>
+                            <?php if ($studentRequest->R_status ==  "พิจารณาแล้ว" ) { 
+                           echo $studentRequest->AP_approve; 
+                            }
+                            else {
+
+                              echo "$studentRequest->R_status";
+
                             
+                             } ?>
+                          <br/>
                             <a class="btn btn-success" href=?controller=studentRequest&action=detailRequest&<?php echo "R_id=$studentRequest->R_id";?>>รายละเอียด</a>
                            
                         </div>
@@ -66,7 +74,7 @@ if (!$_SESSION['userid']) {
         </center>
 
         <!-- <center><a class="button" href="?controller=order&action=newOrder">Addnew</a></center> -->
-        <a class="btn btn-success" href=?controller=studentRequest&action=newRequest>AddRequest</a>
+        <a class="btn btn-success" href=?controller=studentRequest&action=newRequest&<?php echo "R_id=$studentRequest->R_id";?>>AddRequest</a>
 
 
     </body>
