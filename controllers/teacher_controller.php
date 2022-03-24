@@ -20,6 +20,13 @@
         
 
     }
+
+    public function search()
+    {
+        $key=$_GET['key'];
+        $SetDateCheckpoint_List = SetDateCheckpoint::search($key);
+        require_once("./views/teacher/index.php");
+    }
    
    
 }?>

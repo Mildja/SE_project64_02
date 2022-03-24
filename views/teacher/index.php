@@ -202,6 +202,13 @@ if (!$_SESSION['userid']) {
             <!--หน้า3ของปอ-->
             <div class="tab-pane fade" id="page3" role="tabpanel" aria-labelledby="page3-tab">
               <!--หน้า3-->
+              <form method="GET" action="" class="container">
+                  <input class="textbox" type="text" name="key">
+                  <input class="textbox" type="hidden" name="controller" value="teacher"/>
+                  <button class="btn-submit" type="submit" name="action" value="search">Search</button>
+              </form>
+
+
 
               <?php foreach ($teacher_list as $NotApprove) { ?>
                 <?php if ($NotApprove->AP_approve == "ไม่อนุมัติ" && $NotApprove->R_status == "พิจารณาแล้ว") { ?>

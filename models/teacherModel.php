@@ -195,5 +195,39 @@ class teacher
         require("connection_close.php");
         return "Update success $result rows";
     }
+
+    //student organization request AP_approve
+    public static function search($key)
+    {
+        $searchAllList = [];
+        require("connection_connect.php");
+        $sql = "SELECT Student.S_id, Student.S_fname, Student.S_lname, Student.S_year, Organization.O_name, Request.R_type, Request.R_sdate, 
+                       Request.R_status,AP_Request.AP_date,AP_Request.AP_approve,Colabor.C_fname
+        FROM Student 
+        INNER JOIN Request ON Request.S_id=Student.S_id
+        LEFT JOIN AP_Request ON AP_Request.R_id=Request.R_id
+        LEFT JOIN Colabor ON Colabor.C_id = Request.C_id
+        LEFT JOIN Organization ON Organization.O_id=Colabor.O_id  
+        where (Student.S_id like'%$key%' or Student.S_fname like'%$key%' or Student.S_lname like'%$key%' or Student.S_year like'%$key%'
+        or Organization.O_name like'%$key%' or Request.R_type like'%$key%' or Request.R_status like'%$key%' or AP_Request.AP_approve like'%$key%')";
+
+        $result = $conn->query($sql);
+        while($row = $result->fetch_assoc())
+        {
+            $R_type = $row["R_type"];
+            $R_status  = $row["R_status"];
+            $S_id  = $row["S_id"];
+            $S_fname = $row["S_fname"];
+            $S_lname = $row["S_lname"];
+            $S_year = $row["S_year"];
+            $O_name = $row["O_name"];
+            $AP_approve = $row["AP_approve"];
+
+            $searchAllList[] = new teacher($S_id,$S_fname,$S_lname,$S_year,$O_name,$R_type,$R_status,$AP_approve);
+        }
+        require("connection_close.php");
+
+        return $searchAllList;
+    }
 }
 
