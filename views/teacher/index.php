@@ -162,6 +162,11 @@ if (!$_SESSION['userid']) {
                         <div class="col">
                           คอลัม1
                           <h2><?php echo $Approve->O_name; ?></h2>
+                          <h2><?php echo $NotApprove->O_name; ?></h2>
+                          <p5><?php echo "วันที่ยื่นคำร้อง $NotApprove->DR_date"; ?></p5><br>
+                          <p5><?php echo "รูปแบบคำร้อง: $NotApprove->R_type"; ?></p5><br>
+                          <p5><?php echo "by"; ?></p5>
+                          <p5 class="text-danger"><?php echo "$NotApprove->S_fname $NotApprove->S_lname $NotApprove->S_id"; ?></p5><br>
 
                         </div>
 
