@@ -209,7 +209,7 @@ class teacher
         LEFT JOIN Colabor ON Colabor.C_id = Request.C_id
         LEFT JOIN Organization ON Organization.O_id=Colabor.O_id  
         where (Student.S_id like'%$key%' or Student.S_fname like'%$key%' or Student.S_lname like'%$key%' or Student.S_year like'%$key%'
-        or Organization.O_name like'%$key%' or Request.R_type like'%$key%' or Request.R_status like'%$key%' or AP_Request.AP_approve like'%$key%')and";
+        or Organization.O_name like'%$key%' or Request.R_type like'%$key%' or Request.R_status like'%$key%' or AP_Request.AP_approve like'%$key%')";
 
         $result = $conn->query($sql);
         while($row = $result->fetch_assoc())
