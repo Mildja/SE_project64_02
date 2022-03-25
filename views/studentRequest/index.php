@@ -23,7 +23,7 @@ if (!$_SESSION['userid']) {
 
 
 
-        <a class="btn btn-success" href=?controller=studentRequest&action=newRequest&<?php echo "S_id=$userid";?>>AddRequest</a>
+        <a class="btn btn-success" href=?controller=studentRequest&action=newRequest&<?php echo "S_id=$userid";?>>AddRequest</a></br></br>
 
 
             <!-- <form method="get" action="" style=" right:200px;">
@@ -51,7 +51,8 @@ if (!$_SESSION['userid']) {
                             
                              } ?>
                           <br/>
-                            <a class="btn btn-success" href=?controller=studentRequest&action=detailRequest&<?php echo "R_id=$studentRequest->R_id";?>>รายละเอียด</a>
+
+                            <a class="btn btn-success " style="background-color:crimson;border-color:crimson" href=?controller=studentRequest&action=detailRequest&<?php echo "R_id=$studentRequest->R_id";?>>รายละเอียด</a>
                            
                         </div>
                         <!-- ?controller=studentRequest&action=detailRequest -->

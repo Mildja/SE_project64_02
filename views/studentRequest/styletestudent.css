@@ -3,12 +3,12 @@
     padding: 30px;
     margin: 10px;
     height: 200px;
-    max-width: 50%;
+    max-width: 80%;
     border-radius: 30px;
     text-align: start;
 }
 .box:hover{
-    background: #b0b0ff;
+    background: #3a5866;
     color: #fff;
 }
 
