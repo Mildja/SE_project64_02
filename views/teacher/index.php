@@ -13,7 +13,7 @@ if (!$_SESSION['userid']) {
   <html>
 
   <head>
-    <meta charset="UTF-8">*
+    <meta charset="UTF-8">
 
     <link rel="stylesheet" href="views/teacher/styleteacher.css">
 
@@ -74,7 +74,26 @@ if (!$_SESSION['userid']) {
           <div class="tab-content" id="myTabContent">
 
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              ...
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
             </div>
             <!--หน้า1-->
             <div class="tab-pane fade" id="page1" role="tabpanel" aria-labelledby="page1-tab">
