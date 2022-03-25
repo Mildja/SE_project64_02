@@ -92,14 +92,14 @@ if (!$_SESSION['userid']) {
 
                       <h2 ><?php echo "$teacher->O_name"; ?></h2>
                       <p5><?php echo "$teacher->R_type $teacher->DR_date "; ?></p5><br>
-                      <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
+                      <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br><br>
 
 
                       <form method="get" action="">
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="myFunction(<?php echo $teacher->R_id; ?>,'อนุมัติ')">
-                          อนุมัติแล้ว<br>
+                          อนุมัติแล้ว
                         </button>
 
                         <!-- Modal -->
@@ -107,7 +107,7 @@ if (!$_SESSION['userid']) {
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-body">
-                                อนุมัติเรียบร้อยแล้ว
+                                อนุมัติเรียบร้อยแล้ว<br>
                                 <input type="hidden" name="controller" value="teacher" />
                                 <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
                               </div>
