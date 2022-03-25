@@ -104,7 +104,7 @@ if (!$_SESSION['userid']) {
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
+                          <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                               <div class="modal-body">
                                 อนุมัติเรียบร้อยแล้ว<br>
