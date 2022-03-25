@@ -99,7 +99,7 @@ if (!$_SESSION['userid']) {
 
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="myFunction(<?php echo $teacher->R_id; ?>,'อนุมัติ')">
-                          อนุมัติแล้ว
+                          อนุมัติแล้ว<br>
                         </button>
 
                         <!-- Modal -->
