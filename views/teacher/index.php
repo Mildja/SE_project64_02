@@ -86,15 +86,11 @@ if (!$_SESSION['userid']) {
                   <div class="column">
                     <div class="box">
 
-<<<<<<< Updated upstream
                     <div class="row row-cols-3">
 
                         <div class="col">
 
                       <h2 ><?php echo "$teacher->O_name"; ?></h2>
-=======
-                      <h2><?php echo "$teacher->O_name"; ?></h2>
->>>>>>> Stashed changes
                       <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
                       <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
 
@@ -167,19 +163,10 @@ if (!$_SESSION['userid']) {
                         <center>
                           <img src="img/file.png" height="100" width="105"><br>
 
-<<<<<<< Updated upstream
                             <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($NotApprove->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
 
                           </center>
                         </div>
-=======
-                          <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($NotApprove->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
-                          <a class="btn btn-success" href=?controller=teacher&action=detail&<?php echo "R_id=$NotApprove->R_id"; ?>>รายละเอียด</a>
-
-                        </center>
-                      </div>
-
->>>>>>> Stashed changes
 
                         <div class="col"><br><br><br><br><br>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  
@@ -255,12 +242,8 @@ if (!$_SESSION['userid']) {
                           <p5><?php echo "รูปแบบคำร้อง: $NotApprove->R_type"; ?></p5><br>
                           <p5><?php echo "by"; ?></p5>
                           <p5 class="text-danger"><?php echo "$NotApprove->S_fname $NotApprove->S_lname $NotApprove->S_id"; ?></p5><br>
-<<<<<<< Updated upstream
                           <p5><?php echo "ไม่อนุมัติ เพราะ $NotApprove->AP_note"; ?></p5><br>
                           
-=======
-
->>>>>>> Stashed changes
 
                         </div>
 
