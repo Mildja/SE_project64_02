@@ -22,7 +22,7 @@
     }
 
     public function search()
-    {
+    {   
         $key=$_GET['key'];
         $teacher_list = teacher::search($key);
         require_once('views/teacher/index.php');

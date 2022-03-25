@@ -209,11 +209,12 @@ class teacher
         LEFT JOIN Colabor ON Colabor.C_id = Request.C_id
         LEFT JOIN Organization ON Organization.O_id=Colabor.O_id  
         where (Student.S_id like'%$key%' or Student.S_fname like'%$key%' or Student.S_lname like'%$key%' or Student.S_year like'%$key%'
-        or Organization.O_name like'%$key%' or Request.R_type like'%$key%' or Request.R_status like'%$key%' or AP_Request.AP_approve like'%$key%')";
+        or Organization.O_name like'%$key%' or Request.R_type like'%$key%' or Request.R_status like'%$key%' or AP_Request.AP_approve like'%$key%')and";
 
         $result = $conn->query($sql);
         while($row = $result->fetch_assoc())
         {
+            echo"เข้าโมเดล1";
             $R_type = $row["R_type"];
             $R_sdate = $row["R_sdate"];
             $R_status  = $row["R_status"];
@@ -225,12 +226,12 @@ class teacher
             $AP_date  = $row["AP_date"];
             $AP_approve = $row["AP_approve"];
             $C_fname  = $row["C_fname "];
-
-            $searchAllList[] = new teacher($S_id,$S_fname,$S_lname,$S_year,$O_name,$R_sdate,$R_type,$R_status,$AP_date,$AP_approve,$C_fname);
+            echo"เข้าโมเดล1";
+            $search_List[] = new teacher($S_id,$S_fname,$S_lname,$S_year,$O_name,$R_sdate,$R_type,$R_status,$AP_date,$AP_approve,$C_fname);
         }
         require("connection_close.php");
 
-        return $searchAllList;
+        return $search_List;
     }
 
 }

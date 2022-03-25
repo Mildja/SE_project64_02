@@ -34,6 +34,22 @@ if (!$_SESSION['userid']) {
     <div class="container">
       <div class="row align-items-start ">
         <div class='col-sm-20 m-auto'>
+          <!--start แถบ-->
+          <br><br>
+          <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand">คำร้องขอฝึกงาน</a>
+              <form class="d-flex"  method="get" action="">
+                <input class="form-control me-2" type="text" name="key" placeholder="Search" aria-label="Search">
+                <input type="hidden" name="controller" value="teacher" />
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="action" value="search">Search</button>
+              </form>
+            </div>
+          </nav>
+
+
+
+          <!--จบ แถบ-->
 
           
 
@@ -70,35 +86,39 @@ if (!$_SESSION['userid']) {
                   <div class="column">
                     <div class="box">
 
+<<<<<<< Updated upstream
                     <div class="row row-cols-3">
 
                         <div class="col">
 
                       <h2 ><?php echo "$teacher->O_name"; ?></h2>
+=======
+                      <h2><?php echo "$teacher->O_name"; ?></h2>
+>>>>>>> Stashed changes
                       <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
                       <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
-                      
+
 
                       <form method="get" action="">
-                        
-                      <!-- Button trigger modal -->
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="myFunction(<?php echo $teacher->R_id; ?>,'อนุมัติ')">
-                        อนุมัติแล้ว
-                      </button>
 
-                      <!-- Modal -->
-                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-body">
-                              อนุมัติเรียบร้อยแล้ว
-                              <input type="hidden" name="controller" value="teacher" />
-                              <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="myFunction(<?php echo $teacher->R_id; ?>,'อนุมัติ')">
+                          อนุมัติแล้ว
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-body">
+                                อนุมัติเรียบร้อยแล้ว
+                                <input type="hidden" name="controller" value="teacher" />
+                                <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
+                              </div>
+
                             </div>
-                              
                           </div>
                         </div>
-                      </div>
 
                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addModal" onclick="myFunction(<?php echo $teacher->R_id; ?>,'ไม่อนุมัติ')">
                           ไม่อนุมัติ
@@ -106,9 +126,9 @@ if (!$_SESSION['userid']) {
                         <input type="hidden" name="AP_approve" id="AP_approve" value="ไม่อนุมัติ" />
                         <input type="hidden" name="R_id" id="R_id" value="<?php echo $teacher->R_id; ?>" />
                         <script>
-                          function myFunction(test,status) {
+                          function myFunction(test, status) {
                             document.getElementById("R_id").value = test;
-                            document.getElementById("AP_approve").value=status;
+                            document.getElementById("AP_approve").value = status;
                           }
                         </script>
                         <!-- Modal คือการคลิกให้เด้ง pop up ขึ้นมานะเพื่อน-->
@@ -128,7 +148,7 @@ if (!$_SESSION['userid']) {
                                   <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3" name="AP_note" require></textarea>
                                 </div>
                                 <!-- ส่งค่าแต่น่าจะส่งผิดน้องยังไม่เข้าเดี่ยวต้องไปเช็คเรื่อง value -->
-                                
+
                                 <!--<input type="hidden" name="AP_approve" value="ไม่อนุมัติ" />-->
                                 <input type="hidden" name="A_id" value="<?php echo $userid; ?>" />
                                 <input type="hidden" name="controller" value="teacher" />
@@ -144,13 +164,22 @@ if (!$_SESSION['userid']) {
                       </form></div>
                       <br><br>
                       <div class="col">
-                          <center>
-                            <img src="img/file.png" height="100" width="105"><br>
+                        <center>
+                          <img src="img/file.png" height="100" width="105"><br>
 
+<<<<<<< Updated upstream
                             <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($NotApprove->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
 
                           </center>
                         </div>
+=======
+                          <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($NotApprove->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
+                          <a class="btn btn-success" href=?controller=teacher&action=detail&<?php echo "R_id=$NotApprove->R_id"; ?>>รายละเอียด</a>
+
+                        </center>
+                      </div>
+
+>>>>>>> Stashed changes
 
                         <div class="col"><br><br><br><br><br>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  
@@ -179,16 +208,16 @@ if (!$_SESSION['userid']) {
                       <div class="row row-cols-3">
 
                         <div class="col">
-                         <!-- คอลัม1 -->
+                          <!-- คอลัม1 -->
                           <h2><?php echo "$teacher->O_name"; ?></h2>
                           <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
                           <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
                           <p5><?php echo "$teacher->R_status"; ?></p5><br>
-                          </div>
+                        </div>
 
                         <div class="col">
                           <center>
-                           <!-- คอลัม2 -->
+                            <!-- คอลัม2 -->
                           </center>
                         </div>
 
@@ -226,8 +255,12 @@ if (!$_SESSION['userid']) {
                           <p5><?php echo "รูปแบบคำร้อง: $NotApprove->R_type"; ?></p5><br>
                           <p5><?php echo "by"; ?></p5>
                           <p5 class="text-danger"><?php echo "$NotApprove->S_fname $NotApprove->S_lname $NotApprove->S_id"; ?></p5><br>
+<<<<<<< Updated upstream
                           <p5><?php echo "ไม่อนุมัติ เพราะ $NotApprove->AP_note"; ?></p5><br>
                           
+=======
+
+>>>>>>> Stashed changes
 
                         </div>
 
@@ -243,7 +276,7 @@ if (!$_SESSION['userid']) {
                         <div class="col"><br><br>
                           <center>
                             <h2 class="text-danger"><?php echo "$NotApprove->AP_approve"; ?></h2>
-                            <a href=?controller=studentRequest&action=detailRequest&<?php echo "R_id=$NotApprove->R_id";?>>รายละเอียด</a>
+                            <a href=?controller=studentRequest&action=detailRequest&<?php echo "R_id=$NotApprove->R_id"; ?>>รายละเอียด</a>
                           </center>
                         </div>
 
