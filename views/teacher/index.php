@@ -91,7 +91,7 @@ if (!$_SESSION['userid']) {
                         <div class="col">
 
                       <h2 ><?php echo "$teacher->O_name"; ?></h2>
-                      <p5><?php echo "$teacher->R_type $teacher->DR_date"; ?></p5><br>
+                      <p5><?php echo "$teacher->R_type $teacher->DR_date "; ?></p5><br>
                       <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
 
 
@@ -163,7 +163,7 @@ if (!$_SESSION['userid']) {
                         <center>
                           <img src="img/file.png" height="100" width="105"><br>
 
-                            <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($NotApprove->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
+                            <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($teacher->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
 
                           </center>
                         </div>
