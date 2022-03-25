@@ -9,7 +9,7 @@
     <body bgcolor="#f0fff0">
         <center>
 
-            <?php echo $userid ?>
+            
 
                
                     <div class="column">
@@ -17,6 +17,7 @@
                             <center>
                             <br><h2><b><?php echo "รายละเอียดใบคำร้อง"; ?></b></h2><br><br>
                             </center>
+                            
                             <p5><?php echo "รูปแบบคำร้อง : $studentRequest->R_type"; ?></p5><br>
                             <p5><?php echo "ชื่อ : $studentRequest->S_fname"; ?></p5>
                             <p5><?php echo "  นามสกุล : $studentRequest->S_lname"; ?></p5>
@@ -42,10 +43,14 @@
                             <p5><?php echo "ตำแหน่ง : $studentRequest->D_position"; ?></p5><br><br><br>
 
                             <?php if ($studentRequest->R_status ==  "พิจารณาแล้ว" ) { 
-                                   echo "สถานะใบคำร้อง: $studentRequest->AP_approve"; 
+                                  echo "สถานะใบคำร้อง: $studentRequest->AP_approve <br/>";
+                                 if ($studentRequest->AP_approve ==  "ไม่อนุมัติ" ) { 
+                                   echo "เหตุผล:  $studentRequest->AP_note";
+                                  }
                             }
                             else {
                               echo "สถานะใบคำร้อง:  $studentRequest->R_status";
+
                         
                              } ?>
                           <br>

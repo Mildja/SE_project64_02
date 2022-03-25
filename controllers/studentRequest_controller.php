@@ -44,6 +44,14 @@
        $R_room = $_POST['R_room'];
        $R_sdate = $_POST['R_sdate'];
        $R_fdate= $_POST['R_fdate'];
+   $O_addr = $_POST['O_addr'];
+       $C_fname = $_POST['C_fname'];
+       $C_lname = $_POST['C_lname'];
+       $C_email = $_POST['C_email'];
+       $C_tel = $_POST['C_tel'];
+       $D_fname = $_POST['D_fname'];
+       $D_lname = $_POST['D_lname'];
+       $D_position = $_POST['D_position'];
 
 
        //$O_name = $_POST['O_name'];
@@ -57,17 +65,10 @@
             else
             {
                 $O_name = $_POST['O_name'];
+                
  
             }
-       $O_addr = $_POST['O_addr'];
-       $C_fname = $_POST['C_fname'];
-       $C_lname = $_POST['C_lname'];
-       $C_email = $_POST['C_email'];
-       $C_tel = $_POST['C_tel'];
-       $D_fname = $_POST['D_fname'];
-       $D_lname = $_POST['D_lname'];
-       $D_position = $_POST['D_position'];
-
+    
        $list1=Organization::get($O_name);
        if($O_name===$list1->O_id)
        {
