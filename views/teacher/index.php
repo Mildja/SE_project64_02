@@ -74,6 +74,154 @@ if (!$_SESSION['userid']) {
           <div class="tab-content" id="myTabContent">
 
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <?php foreach ($teacher_list as $teacher) { ?>
+                <!--เงื่อนไขใครเงื่อนไขมันเลยตามหัวข้อ-->
+                <?php if ($teacher->R_status == "รอพิจารณา" && $teacher->DS_id == "ยังไม่ได้อัพเอกสารขอความอนุเคราะห์") { ?>
+                  <div class="column">
+                    <div class="box">
+
+                    <div class="row row-cols-3">
+
+                        <div class="col">
+
+                      <h2 ><?php echo "$teacher->O_name"; ?></h2>
+                      <p5><?php echo "$teacher->R_type $teacher->DR_date "; ?></p5><br>
+                      <p5 class="text-danger"><?php echo "by $teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br><br>
+
+
+                      <form method="get" action="">
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="myFunction(<?php echo $teacher->R_id; ?>,'อนุมัติ')">
+                          อนุมัติแล้ว
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-body">
+                                อนุมัติเรียบร้อยแล้ว<br>
+                                <input type="hidden" name="controller" value="teacher" />
+                                <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#addModal" onclick="myFunction(<?php echo $teacher->R_id; ?>,'ไม่อนุมัติ')">
+                          ไม่อนุมัติ
+                        </button>
+                        <input type="hidden" name="AP_approve" id="AP_approve" value="ไม่อนุมัติ" />
+                        <input type="hidden" name="R_id" id="R_id" value="<?php echo $teacher->R_id; ?>" />
+                        <script>
+                          function myFunction(test, status) {
+                            document.getElementById("R_id").value = test;
+                            document.getElementById("AP_approve").value = status;
+                          }
+                        </script>
+                        <!-- Modal คือการคลิกให้เด้ง pop up ขึ้นมานะเพื่อน-->
+                        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title text-dark" id="addModalLabel">เหตุผลที่ไม่อนุมัติ</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+
+
+                              <div class="modal-body" id="<?php echo $teacher->R_id; ?>">
+                                <!-- ช่องกรอกข้อความ byมายด์ -->
+                                <div class="mb-3 text-dark">
+                                  <label for="exampleFormControlTextarea1" class="form-label">เหตุผลที่ไม่อนุมัติ</label>
+                                  <textarea class="form-control " id="exampleFormControlTextarea1" aria-label=".form-control-sm example" rows="3" name="AP_note" require></textarea>
+                                </div>
+                                <!-- ส่งค่าแต่น่าจะส่งผิดน้องยังไม่เข้าเดี่ยวต้องไปเช็คเรื่อง value -->
+
+                                <!--<input type="hidden" name="AP_approve" value="ไม่อนุมัติ" />-->
+                                <input type="hidden" name="A_id" value="<?php echo $userid; ?>" />
+                                <input type="hidden" name="controller" value="teacher" />
+                                <button type="submit" class="btn btn-secondary" name="action" value="index" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" name="action" value="addAP_request">Save</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                        <!-- จบ Modal -->
+
+                      </form></div>
+                      <br><br>
+                      <div class="col">
+                        <center>
+                          <img src="img/file.png" height="100" width="105"><br>
+
+                            <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($teacher->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
+
+                          </center>
+                        </div>
+
+                        <div class="col"><br><br><br><br><br>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  
+                        &lt; &lt; 
+                            <a align = 'left' href=?controller=studentRequest&action=detailRequest&<?php echo "R_id=$teacher->R_id";?>>รายละเอียดเพิ่มเติม</a>
+                            &gt; &gt; 
+                        </div>
+                        
+                    </div>
+                    </div>
+                  </div>
+                <?php } ?>
+
+
+                <?php if ($teacher->AP_approve == "ไม่อนุมัติ" && $teacher->R_status == "พิจารณาแล้ว") { ?>
+
+<div class="column">
+  <div class="box">
+    <div class="row row-cols-3">
+
+      <div class="col">
+        <h2><?php echo $teacher->O_name; ?></h2>
+        <p5><?php echo "วันที่ยื่นคำร้อง $teacher->DR_date"; ?></p5><br>
+        <p5><?php echo "รูปแบบคำร้อง: $teacher->R_type"; ?></p5><br>
+        <p5><?php echo "by"; ?></p5>
+        <p5 class="text-danger"><?php echo "$teacher->S_fname $teacher->S_lname $teacher->S_id"; ?></p5><br>
+        <p5><?php echo "ไม่อนุมัติ เพราะ $teacher->AP_note"; ?></p5><br>
+        
+
+      </div>
+
+      <div class="col">
+        <center>
+          <img src="img/file.png" height="100" width="105"><br>
+
+          <?php echo '<a  href="data:application/pdf;base64,' . base64_encode($teacher->DR_path) . ' " onclick="debugBase64(this.href)"/>เอกสารคำร้อง</a>'; ?></p5>
+
+        </center>
+      </div>
+
+      <div class="col"><br><br>
+        <center>
+          <h2 class="text-danger"><?php echo "$teacher->AP_approve"; ?></h2>
+          <a href=?controller=studentRequest&action=detailRequest&<?php echo "R_id=$teacher->R_id"; ?>>รายละเอียด</a>
+        </center>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<?php } ?>
+
+
+
+
+
+                
+              <?php } ?>
+
+            
             
             
 
