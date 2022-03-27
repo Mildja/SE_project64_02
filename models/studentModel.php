@@ -225,7 +225,7 @@ class studentRequest
             $AP_note
         );
     }
-    public static function get2($R_type, $R_position, $R_cost, $R_room, $R_sdate, $R_fdate, $S_id, $C_id, $D_id)
+    public static function get2($R_type, $R_position, $R_cost, $R_room, $R_sdate, $R_fdate, $S_id)
     {
 
         require("connect_connection.php");
@@ -242,7 +242,7 @@ class studentRequest
         INNER JOIN Student ON Student.S_id =Request.S_id
         INNER JOIN Data_namedoc ON Data_namedoc.D_id = Request.D_id
         LEFT JOIN Doc_Request ON Doc_Request.R_id = Request.R_id
-        WHERE Request.R_type='$R_type' AND  Request.R_position='$R_position'  AND  Request.R_cost='$R_cost'  AND  Request.R_room='$R_room'   AND  Request.R_sdate='$R_sdate'  AND  Request.R_fdate='$R_fdate'  AND  Request.S_id='$S_id'  AND  Request.C_id='$C_id' AND  Request.D_id='$D_id'";
+        WHERE Request.R_type='$R_type' AND  Request.R_position='$R_position'  AND  Request.R_cost='$R_cost'  AND  Request.R_room='$R_room'   AND  Request.R_sdate='$R_sdate'  AND  Request.R_fdate='$R_fdate'  AND  Request.S_id='$S_id'  ";
         $result = $conn->query($sql);
         $my_row = $result->fetch_assoc();
 
