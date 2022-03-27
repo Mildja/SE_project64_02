@@ -54,7 +54,7 @@
        $D_position = $_POST['D_position'];
 
 
-       //$O_name = $_POST['O_name'];
+    
 
        $check= $_POST['O_name'];
         if($check==="other")
@@ -104,7 +104,7 @@
         $date1 =date("Y-m-d");
     
         Doc_Request::Add($DR_path,$R_id,$date1);
-       //Student::Add($S_fname,$S_lname);
+
      
        
        studentRequestController::index();
